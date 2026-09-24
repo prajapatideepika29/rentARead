@@ -1,0 +1,231 @@
+{
+  "brand": {
+    "name": "RentARead",
+    "tagline": "Your neighborhood library, curated and delivered to your doorstep.",
+    "concept": "Independent bookshop aesthetic meets modern hyper-local subscription service. Warm, tactile, literary, and deeply trustworthy.",
+    "target_locale": "en-IN",
+    "currency_symbol": "₹",
+    "quarterly_price": 1499,
+    "quarterly_price_formatted": "₹1,499",
+    "plan_details": "3 Months • 12 Books Total (4 Books / Month) • Zero Security Deposit • Free Doorstep Delivery & Pickup"
+  },
+  "colors": {
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#FAF7F2",
+        "on_bg": "#1C1917",
+        "on_bg_muted": "#57534E",
+        "roles": {
+          "link": "#9A3412",
+          "error": "#B91C1C",
+          "success": "#15803D",
+          "accent_highlight": "#C2410C"
+        }
+      },
+      {
+        "name": "panel",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#1C1917",
+        "on_bg_muted": "#57534E",
+        "roles": {
+          "link": "#9A3412",
+          "error": "#B91C1C",
+          "success": "#15803D"
+        }
+      },
+      {
+        "name": "card_parchment",
+        "kind": "solid",
+        "bg": "#F5EFEB",
+        "on_bg": "#1C1917",
+        "on_bg_muted": "#57534E",
+        "roles": {
+          "link": "#9A3412",
+          "border": "#E7DFD5"
+        }
+      },
+      {
+        "name": "hero",
+        "kind": "image",
+        "contrast_against": "#14110F",
+        "guarantee": "scrim: linear-gradient(135deg, rgba(20, 17, 15, 0.92) 0%, rgba(28, 25, 23, 0.82) 60%, rgba(41, 37, 36, 0.75) 100%)",
+        "on_bg": "#FAF7F2",
+        "on_bg_muted": "#D6CEBF",
+        "roles": {
+          "link": "#FDBA74",
+          "error": "#FCA5A5",
+          "success": "#86EFAC"
+        }
+      },
+      {
+        "name": "inverse",
+        "kind": "solid",
+        "bg": "#1C1917",
+        "on_bg": "#FAF7F2",
+        "on_bg_muted": "#D6CEBF",
+        "roles": {
+          "link": "#FDBA74",
+          "error": "#FCA5A5",
+          "success": "#86EFAC"
+        }
+      },
+      {
+        "name": "navbar_glass",
+        "kind": "glass",
+        "contrast_against": "#FAF7F2",
+        "guarantee": "backdrop-blur-xl bg-[#FAF7F2]/85 border-b border-[#E7DFD5]/80",
+        "on_bg": "#1C1917",
+        "on_bg_muted": "#57534E",
+        "roles": {
+          "link": "#9A3412"
+        }
+      },
+      {
+        "name": "whatsapp_toast",
+        "kind": "solid",
+        "bg": "#075E54",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#D1E7DD",
+        "roles": {
+          "link": "#25D366"
+        }
+      },
+      {
+        "name": "badge_status",
+        "kind": "solid",
+        "bg": "#FEF3C7",
+        "on_bg": "#78350F",
+        "on_bg_muted": "#92400E"
+      }
+    ],
+    "accent": "#9A3412",
+    "on_accent": "#FFFFFF",
+    "secondary_accent": "#2B533E",
+    "tertiary_gold": "#D97706"
+  },
+  "typography": {
+    "font_families": {
+      "heading": "'Lora Variable', serif",
+      "display": "'Playfair Display Variable', serif",
+      "body": "'DM Sans Variable', -apple-system, BlinkMacSystemFont, sans-serif",
+      "mono": "'Geist Mono Variable', monospace"
+    },
+    "scale_px": {
+      "display": 56,
+      "h1": 44,
+      "h2": 32,
+      "h3": 24,
+      "h4": 20,
+      "body": 16,
+      "caption": 14
+    },
+    "letter_spacing": {
+      "display": "-0.03em",
+      "heading": "-0.02em",
+      "body": "0em",
+      "label": "0.15em"
+    }
+  },
+  "entry_surfaces": {
+    "/": "editorial split hero — left: literary manifesto + pincode check + primary CTA; right: dynamic book stack card showcase with ambient spotlight",
+    "/login": "branded split auth — left: warm quote & membership perks illustration panel; right: OTP & password login form",
+    "/signup": "branded split auth — left: '3 Months, 12 Books' benefit breakdown; right: registration form with pincode auto-validation",
+    "/catalog": "curated gallery layout — top filters & genre ribbon, sticky rental bundle dock (4/4 quota selector), responsive book grid with spine & jacket previews",
+    "/subscription": "editorial membership card — breakdown of ₹1,499 quarterly pricing, delivery schedule timeline, WhatsApp integration explainer, mocked UPI/Card checkout",
+    "/dashboard": "member reading sanctuary — current 4-book rack with 27-day countdown timers, swap queue, reading quota stats, WhatsApp notification simulator log"
+  },
+  "visual_enhancers": {
+    "textures": "Subtle paper-grain texture overlay (2% opacity) on canvas to eliminate digital sterility",
+    "borders": "1px solid #E7DFD5 (warm linen border) with 8px to 16px soft radii",
+    "marquee": "Single slow-drift editorial ribbon with quotes from classic literature and verified neighborhood readers",
+    "micro_interactions": "Book card tilt on hover, bookmark ribbon toggle animation, 4-book bundle floating pill indicator with smooth counter"
+  },
+  "motion": {
+    "page_transitions": "Subtle fade & slight y-offset (duration: 0.35s, ease: [0.22, 1, 0.36, 1])",
+    "stagger_lists": "0.05s stagger between catalog book cards",
+    "hero_reveal": "Line-by-line masked slide-up for the headline with 0.12s stagger",
+    "toast_animation": "Slide-in from bottom right with WhatsApp badge icon"
+  },
+  "accessibility": {
+    "wcag_level": "AA Compliant",
+    "min_contrast_body": "7.5:1 (Stone #1C1917 on Parchment #FAF7F2)",
+    "min_contrast_muted": "4.6:1 (Stone Muted #57534E on Parchment #FAF7F2)",
+    "focus_rings": "ring-2 ring-offset-2 ring-[#9A3412]",
+    "reduced_motion": "Framer Motion layout animations honor prefers-reduced-motion media query"
+  },
+  "grids_and_layouts": {
+    "container_max_width": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "bento_grid": "Tetris-style reading perks grid (3 columns on desktop: 2-col visual hero card + 1-col stats card + 3 single-col feature cards)",
+    "catalog_grid": "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6",
+    "dashboard_grid": "lg:grid-cols-12 gap-8 with 8-col active reading shelf and 4-col subscription timeline & WhatsApp alert log"
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1544456203-0af5a69f5789?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwzfHxwZXJzb24lMjByZWFkaW5nJTIwYm9vayUyMGNhZmUlMjBsaWJyYXJ5fGVufDB8fHx8MTc5MDI3MjE5NHww&ixlib=rb-4.1.0&q=85",
+      "description": "Woman reading peacefully in warm ambient wooden bookshop/library",
+      "usage": "Hero banner backdrop with dark gradient scrim"
+    },
+    "curated_reading_cozy": {
+      "url": "https://images.unsplash.com/photo-1603950227760-e609ce8e15b4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwzfHx2aW50YWdlJTIwYm9va3MlMjBzdGFjayUyMGNvZmZlZSUyMGNvenklMjByZWFkaW5nfGVufDB8fHx8MTc5MDI3MjE5NHww&ixlib=rb-4.1.0&q=85",
+      "description": "Open book on soft linen with warm lighting",
+      "usage": "Subscription benefit highlight card"
+    },
+    "book_stack_aesthetic": {
+      "url": "https://images.unsplash.com/photo-1529590003495-b2646e2718bf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwyfHx2aW50YWdlJTIwYm9va3MlMjBzdGFjayUyMGNvZmZlZSUyMGNvenklMjByZWFkaW5nfGVufDB8fHx8MTc5MDI3MjE5NHww&ixlib=rb-4.1.0&q=85",
+      "description": "Stack of vintage hardcover books on wooden table",
+      "usage": "How It Works 4-book doorstep delivery card"
+    },
+    "reading_with_coffee": {
+      "url": "https://images.unsplash.com/photo-1474366521946-c3d4b507abf2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHw0fHx2aW50YWdlJTIwYm9va3MlMjBzdGFjayUyMGNvZmZlZSUyMGNvenklMjByZWFkaW5nfGVufDB8fHx8MTc5MDI3MjE5NHww&ixlib=rb-4.1.0&q=85",
+      "description": "Open book beside steaming teacup on saucer",
+      "usage": "Testimonial and community reading section"
+    },
+    "person_reading_tea": {
+      "url": "https://images.unsplash.com/photo-1588243291559-c4a0c36bc2dc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjByZWFkaW5nJTIwYm9vayUyMGNhZmUlMjBsaWJyYXJ5fGVufDB8fHx8MTc5MDI3MjE5NHww&ixlib=rb-4.1.0&q=85",
+      "description": "Hands holding an open novel with a warm beverage",
+      "usage": "Authentication sidebar & reading experience banner"
+    }
+  },
+  "component_structure": {
+    "navbar": "frontend/src/components/Navbar.tsx (Logo SVG mark, Pincode indicator, Catalog link, How it works, Pricing, Cart dock button, User profile)",
+    "footer": "frontend/src/components/Footer.tsx (Literary quotes, Pincode availability directory, FAQ, WhatsApp support link, copyright)",
+    "pincode_checker": "frontend/src/components/PincodeChecker.tsx (Interactive pincode validator for Bangalore/Mumbai/Delhi NCR/Hyderabad/Pune hubs with instant delivery ETA preview)",
+    "book_card": "frontend/src/components/BookCard.tsx (Cover image, genre pill, page count, synopsis popover, 'Add to this month's 4-bundle' CTA with testids)",
+    "bundle_dock": "frontend/src/components/BundleDock.tsx (Floating bottom/side drawer tracking the 4 selected books for the upcoming cycle with 1-click checkout trigger)",
+    "whatsapp_simulator": "frontend/src/components/WhatsAppSimulator.tsx (Interactive live preview of WhatsApp notifications: Order confirmed, Dispatch with OTP, 27-day return reminder, Pickup scheduled)",
+    "subscription_card": "frontend/src/components/SubscriptionPlanCard.tsx (Quarterly ₹1,499 breakdown, 12 books total, free doorstep swap, mocked payment gateway modal)",
+    "dashboard_tracker": "frontend/src/components/DashboardTracker.tsx (Cycle 1/3 progress, 27-day return countdown clock, return & select next 4 books button)"
+  },
+  "test_attributes": {
+    "pincode_input": "data-testid=\"pincode-input\"",
+    "pincode_check_button": "data-testid=\"pincode-check-button\"",
+    "pincode_status_message": "data-testid=\"pincode-status-message\"",
+    "book_card": "data-testid=\"book-card\"",
+    "add_to_bundle_button": "data-testid=\"add-to-bundle-button\"",
+    "bundle_dock_counter": "data-testid=\"bundle-dock-counter\"",
+    "checkout_button": "data-testid=\"checkout-button\"",
+    "payment_mock_submit": "data-testid=\"payment-mock-submit\"",
+    "whatsapp_alert_item": "data-testid=\"whatsapp-alert-item\"",
+    "dashboard_quota_badge": "data-testid=\"dashboard-quota-badge\"",
+    "dashboard_return_reminder": "data-testid=\"dashboard-return-reminder\"",
+    "swap_books_trigger": "data-testid=\"swap-books-trigger\""
+  },
+  "instructions_to_main_agent": [
+    "Theme: Warm Editorial Parchment. Import '@fontsource-variable/lora' and '@fontsource-variable/dm-sans' in frontend/src/index.css.",
+    "Do NOT use generic cold blues or tech purples. Use rich Terracotta (#9A3412), Forest Green (#2B533E), and warm Parchment (#FAF7F2).",
+    "Pincode Serviceability: Seed supported pincodes across major Indian hubs (e.g. 560001 Bangalore Central, 560034 Koramangala, 560038 Indiranagar, 110001 Delhi Connaught Place, 400001 Mumbai Fort, 400050 Bandra, 500081 HITEC City Hyderabad, 411001 Pune Camp) and provide clean validation feedback.",
+    "Subscription Plan: Standardized quarterly plan at ₹1,499 for 3 months (4 books/month = 12 books total). Payment must be mockable with Instant Confirmation.",
+    "WhatsApp Notification System: Implement real-time simulation toast and a dedicated notification log showing the 4 lifecycle messages (Order Placed, Out for Delivery, Day 27 Return Reminder, Pickup Complete).",
+    "Always include testids as outlined in the `test_attributes` map so all interactive flows are verified."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Avoid AI slop: Use asymmetrical editorial layouts, distinct font pairings, and high-contrast readable surfaces.",
+    "Never apply universal transitions like transition: all. Target specific properties (opacity, transform, background-color).",
+    "Never center align the entire app container or rely on generic centered hero layouts.",
+    "Use generous padding (p-6 to p-12) and avoid cramped text-to-border containers.",
+    "Use Sonner for toasts placed at bottom-right."
+  ]
+}
