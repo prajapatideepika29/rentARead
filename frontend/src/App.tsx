@@ -9,14 +9,24 @@ import Signup from "@/pages/Signup";
 import Catalog from "@/pages/Catalog";
 import Subscription from "@/pages/Subscription";
 import Dashboard from "@/pages/Dashboard";
+import ForgotPassword from "@/pages/ForgotPassword";
+import ResetPassword from "@/pages/ResetPassword";
 
-// Lenis momentum scrolling + reset scroll position on every navigation.
+// Lenis momentum scrolling + scroll management: hash links glide to their section,
+// plain navigations reset to the top.
 function ScrollManager() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        const t = setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 60);
+        return () => clearTimeout(t);
+      }
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -45,6 +55,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/subscription" element={<Subscription />} />
         <Route path="/dashboard" element={<Dashboard />} />

@@ -6,6 +6,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Marquee } from "@/components/Marquee";
 import { PincodeChecker } from "@/components/PincodeChecker";
+import { ToysTeaser } from "@/components/ToysTeaser";
 
 const HERO_IMG =
   "https://images.unsplash.com/photo-1544456203-0af5a69f5789?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwzfHxwZXJzb24lMjByZWFkaW5nJTIwYm9vayUyMGNhZmUlMjBsaWJyYXJ5fGVufDB8fHx8MTc5MDI3MjE5NHww&ixlib=rb-4.1.0&q=85";
@@ -227,6 +228,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ToysTeaser />
 
       {/* Pricing */}
       <section id="pricing" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8" data-testid="pricing-section">
