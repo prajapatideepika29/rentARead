@@ -11,6 +11,7 @@ import type { AppNotification, Rental, Subscription } from "@/lib/types";
 import { useAuth } from "@/hooks/useAuth";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { BadgesCard } from "@/components/BadgesCard";
 
 const fetchSubscription = () => apiGet<Subscription | null>("/subscriptions/me");
 const fetchRentals = () => apiGet<Rental[]>("/rentals/me");
@@ -47,6 +48,7 @@ export default function Dashboard() {
       void queryClient.invalidateQueries({ queryKey: ["subscription"] });
       void queryClient.invalidateQueries({ queryKey: ["notifications"] });
       void queryClient.invalidateQueries({ queryKey: ["books"] });
+      void queryClient.invalidateQueries({ queryKey: ["badges"] });
     },
     onError: (e) => toast.error(apiErrorMessage(e)),
   });
@@ -215,6 +217,8 @@ export default function Dashboard() {
                   Plan ends {format(new Date(sub.end_date), "d MMM yyyy")}
                 </p>
               </div>
+
+              <BadgesCard />
 
               <div className="overflow-hidden rounded-2xl border border-[#F1E8DC] bg-white" data-testid="whatsapp-log">
                 <div className="flex items-center gap-2 bg-[#075E54] px-5 py-3.5 text-white">

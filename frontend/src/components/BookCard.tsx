@@ -38,6 +38,10 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
               alt={`${book.title} cover`}
               loading="lazy"
               onError={() => setImgOk(false)}
+              onLoad={(e) => {
+                // Open Library answers missing covers with a 1x1 blank image — treat as no cover.
+                if (e.currentTarget.naturalWidth < 10) setImgOk(false);
+              }}
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           ) : (
@@ -62,7 +66,12 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
       <div className="flex flex-1 flex-col pt-3">
         <h3 className="font-heading text-base font-semibold leading-snug text-[#0F172A]">{book.title}</h3>
         <p className="mt-0.5 text-sm text-[#64748B]">{book.author}</p>
-        <p className="mt-1 text-xs text-[#94A3B8]">{book.pages} pages</p>
+        <div className="mt-1.5 flex items-center gap-2">
+          <span className="rounded-full border border-[#BAE6FD] bg-[#E0F2FE] px-2.5 py-0.5 text-[11px] font-bold text-[#0369A1]">
+            {book.age_group === "grown-ups" ? "Grown-ups" : `Ages ${book.age_group}`}
+          </span>
+          <span className="text-xs text-[#94A3B8]">{book.pages} pages</span>
+        </div>
         <button
           data-testid="add-to-bundle-button"
           onClick={onAdd}

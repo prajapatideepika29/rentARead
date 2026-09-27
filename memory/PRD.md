@@ -35,6 +35,12 @@ FR-01 pincode access control · FR-02 3-month subscription mgmt · FR-03 invento
 - Copy re-toned to upbeat family voice ("As easy as story time", "The Toy Trunk", pizza-night pricing)
 - All routes, endpoints, testids, and flows unchanged; typecheck clean
 
+## Implemented (27 Sep 2026 — kids' catalogue + reading badges)
+- Seeded 20 real children's books with covers (Open Library ISBNs): 5 board books (2–4), 6 early readers (5–7), 5 chapter books (8–10), 4 young adult (11–14); the 26 existing titles tagged Grown-ups — 46 total
+- age_group on the Book model; catalogue has a sunny age-group filter ribbon (client-side, alongside genre + search) and age tags on every book card
+- GET /api/badges/me computes 5 milestone badges from real rental activity (First Box, Book Explorer, Super Explorer, Genre Hopper, Right on Time); dashboard shows a bouncy badges card with earned/locked states
+- Cover fallback now also catches Open Library's 1×1 blank-image responses
+
 ## Backlog
 - P0: Real WhatsApp Business API; real payment gateway (Stripe/Razorpay)
 - P1: Scheduled day-27/29 reminder worker; pickup scheduling UI; address management

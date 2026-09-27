@@ -39,6 +39,34 @@ BOOKS = [
 ]
 
 
+KIDS_BOOKS = [
+    # Board books & picture books, ages 2-4
+    ("book-very-hungry-caterpillar", "The Very Hungry Caterpillar", "Eric Carle", "Picture Book", "2-4", "9780399226908", 26, "A tiny caterpillar eats his way through the week — and becomes something beautiful."),
+    ("book-goodnight-moon", "Goodnight Moon", "Margaret Wise Brown", "Picture Book", "2-4", "9780060775858", 32, "A gentle bunny says goodnight to everything in the great green room."),
+    ("book-brown-bear", "Brown Bear, Brown Bear, What Do You See?", "Bill Martin Jr & Eric Carle", "Picture Book", "2-4", "9780805047905", 24, "A rhythmic parade of colourful animals that toddlers love to chant along with."),
+    ("book-dear-zoo", "Dear Zoo", "Rod Campbell", "Picture Book", "2-4", "9781416947370", 20, "Lift the flaps to see which animal the zoo sent — too big, too jumpy, or just right?"),
+    ("book-gruffalo", "The Gruffalo", "Julia Donaldson", "Picture Book", "2-4", "9780142403877", 32, "A clever mouse invents a monster to scare off predators — then meets one."),
+    # Early readers, ages 5-7
+    ("book-cat-in-the-hat", "The Cat in the Hat", "Dr. Seuss", "Early Reader", "5-7", "9780394800011", 61, "A mischievous cat turns a rainy day completely upside down."),
+    ("book-green-eggs-ham", "Green Eggs and Ham", "Dr. Seuss", "Early Reader", "5-7", "9780394800165", 62, "Sam-I-Am will not give up: try them, try them, and you may!"),
+    ("book-where-wild-things", "Where the Wild Things Are", "Maurice Sendak", "Early Reader", "5-7", "9780060254926", 48, "Max sails to the land of the Wild Things and becomes their king."),
+    ("book-pete-the-cat", "Pete the Cat: I Love My White Shoes", "Eric Litwin", "Early Reader", "5-7", "9780061906220", 40, "Pete keeps walking and singing his song, no matter what he steps in."),
+    ("book-day-crayons-quit", "The Day the Crayons Quit", "Drew Daywalt", "Early Reader", "5-7", "9780399255373", 40, "Duncan's crayons have written him letters — and they have complaints."),
+    ("book-giraffes-cant-dance", "Giraffes Can't Dance", "Giles Andreae", "Early Reader", "5-7", "9780439287197", 32, "Gerald the giraffe learns that everyone can dance to their own music."),
+    # Chapter books, ages 8-10
+    ("book-charlottes-web", "Charlotte's Web", "E.B. White", "Chapter Book", "8-10", "9780061124952", 184, "A spider named Charlotte weaves words into her web to save her friend Wilbur."),
+    ("book-matilda", "Matilda", "Roald Dahl", "Chapter Book", "8-10", "9780142410370", 240, "A brilliant little girl with ghastly parents discovers she has extraordinary powers."),
+    ("book-the-bfg", "The BFG", "Roald Dahl", "Chapter Book", "8-10", "9780142410387", 224, "Sophie teams up with the Big Friendly Giant to stop the other giants' guzzling."),
+    ("book-wimpy-kid", "Diary of a Wimpy Kid", "Jeff Kinney", "Chapter Book", "8-10", "9780810993136", 224, "Greg Heffley's hilarious illustrated journal of surviving middle school."),
+    ("book-wonder", "Wonder", "R.J. Palacio", "Chapter Book", "8-10", "9780375869020", 320, "Auggie, born with a facial difference, goes to school for the very first time."),
+    # Young adults, ages 11-14
+    ("book-harry-potter-1", "Harry Potter and the Philosopher's Stone", "J.K. Rowling", "Young Adult", "11-14", "9780590353427", 320, "An orphan discovers he's a wizard and boards the train to Hogwarts."),
+    ("book-the-hobbit", "The Hobbit", "J.R.R. Tolkien", "Young Adult", "11-14", "9780547928227", 310, "Bilbo Baggins leaves his cosy hobbit-hole for dwarves, dragons and treasure."),
+    ("book-percy-jackson", "Percy Jackson: The Lightning Thief", "Rick Riordan", "Young Adult", "11-14", "9780786838653", 400, "A boy learns his absent father is a Greek god — and Zeus's lightning bolt is missing."),
+    ("book-holes", "Holes", "Louis Sachar", "Young Adult", "11-14", "9780440414803", 233, "Stanley Yelnats digs holes in the desert and uncovers a family curse."),
+]
+
+
 async def main() -> None:
     for book_id, title, author, genre, isbn, pages, synopsis in BOOKS:
         doc = {
@@ -46,6 +74,7 @@ async def main() -> None:
             "title": title,
             "author": author,
             "genre": genre,
+            "age_group": "grown-ups",
             "isbn": isbn,
             "cover_url": COVER.format(isbn=isbn),
             "pages": pages,
@@ -56,6 +85,24 @@ async def main() -> None:
         await db.books.update_one(
             {"id": book_id},
             {"$set": doc, "$setOnInsert": {"copies_available": 3}},
+            upsert=True,
+        )
+    for book_id, title, author, genre, age_group, isbn, pages, synopsis in KIDS_BOOKS:
+        doc = {
+            "id": book_id,
+            "title": title,
+            "author": author,
+            "genre": genre,
+            "age_group": age_group,
+            "isbn": isbn,
+            "cover_url": COVER.format(isbn=isbn),
+            "pages": pages,
+            "synopsis": synopsis,
+            "copies_total": 4,
+        }
+        await db.books.update_one(
+            {"id": book_id},
+            {"$set": doc, "$setOnInsert": {"copies_available": 4}},
             upsert=True,
         )
     await ensure_indexes()

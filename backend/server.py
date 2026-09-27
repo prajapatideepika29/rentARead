@@ -151,6 +151,7 @@ class Book(BaseModel):
     title: str
     author: str
     genre: str
+    age_group: str = "grown-ups"
     isbn: str
     cover_url: str
     pages: int
@@ -645,6 +646,43 @@ async def reset_password(body: ResetPasswordRequest):
     await db.users.update_one({"id": doc["user_id"]}, {"$set": {"password_hash": hash_password(body.new_password)}})
     await db.password_reset_tokens.update_one({"id": doc["id"]}, {"$set": {"used": True}})
     return {"ok": True, "message": "Password updated"}
+
+
+# ---------- reading badges ----------
+
+class Badge(BaseModel):
+    id: str
+    name: str
+    description: str
+    earned: bool
+
+
+BADGE_DEFS = [
+    ("first_box", "First Box", "Ordered your very first book box"),
+    ("book_explorer", "Book Explorer", "8 books rented"),
+    ("super_explorer", "Super Explorer", "All 12 books in a quarter"),
+    ("genre_hopper", "Genre Hopper", "Books from 3 or more genres"),
+    ("right_on_time", "Right on Time", "Returned a full set"),
+]
+
+
+@api_router.get("/badges/me", response_model=list[Badge])
+async def my_badges(user: dict = Depends(get_current_user)):
+    rentals = await db.rentals.find({"user_id": user["id"]}).to_list(50)
+    total_books = sum(len(r["book_ids"]) for r in rentals)
+    returned_any = any(r["status"] == "returned" for r in rentals)
+    genres: set[str] = set()
+    for r in rentals:
+        books = await db.books.find({"id": {"$in": r["book_ids"]}}, {"_id": 0, "genre": 1}).to_list(10)
+        genres.update(b["genre"] for b in books)
+    earned = {
+        "first_box": len(rentals) >= 1,
+        "book_explorer": total_books >= 8,
+        "super_explorer": total_books >= 12,
+        "genre_hopper": len(genres) >= 3,
+        "right_on_time": returned_any,
+    }
+    return [Badge(id=bid, name=name, description=desc, earned=earned[bid]) for bid, name, desc in BADGE_DEFS]
 
 
 # ---------- waitlist (future verticals, e.g. toys) ----------

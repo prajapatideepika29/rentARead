@@ -22,6 +22,7 @@ export interface Book {
   title: string;
   author: string;
   genre: string;
+  age_group: string;
   isbn: string;
   cover_url: string;
   pages: number;
@@ -63,4 +64,11 @@ export interface AppNotification {
   body: string;
   channel: string;
   created_at: string;
+}
+
+export interface Badge {
+  id: string;
+  name: string;
+  description: string;
+  earned: boolean;
 }

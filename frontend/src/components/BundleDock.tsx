@@ -29,6 +29,7 @@ export function BundleDock() {
       void queryClient.invalidateQueries({ queryKey: ["subscription"] });
       void queryClient.invalidateQueries({ queryKey: ["notifications"] });
       void queryClient.invalidateQueries({ queryKey: ["books"] });
+      void queryClient.invalidateQueries({ queryKey: ["badges"] });
       navigate("/dashboard");
     },
     onError: (e) => toast.error(apiErrorMessage(e)),

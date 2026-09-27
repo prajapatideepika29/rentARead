@@ -10,6 +10,10 @@ import { BookCard } from "@/components/BookCard";
 
 const GENRES = [
   "All",
+  "Picture Book",
+  "Early Reader",
+  "Chapter Book",
+  "Young Adult",
   "Literary Fiction",
   "Mystery & Thriller",
   "Sci-Fi & Fantasy",
@@ -20,24 +24,35 @@ const GENRES = [
   "Romance",
 ];
 
+const AGE_GROUPS = [
+  { id: "all", label: "All ages" },
+  { id: "2-4", label: "Ages 2–4 · Board Books" },
+  { id: "5-7", label: "Ages 5–7 · Early Readers" },
+  { id: "8-10", label: "Ages 8–10 · Chapter Books" },
+  { id: "11-14", label: "Ages 11–14 · Young Adults" },
+  { id: "grown-ups", label: "Grown-ups" },
+];
+
 const fetchBooks = () => apiGet<Book[]>("/books");
 
 export default function Catalog() {
   const { data: books, isError } = useQuery({ queryKey: ["books"], queryFn: fetchBooks, retry: false });
   const [genre, setGenre] = useState("All");
+  const [ageGroup, setAgeGroup] = useState("all");
   const [q, setQ] = useState("");
 
   const filtered = useMemo(() => {
     const list = books ?? [];
     return list.filter((b) => {
       const genreOk = genre === "All" || b.genre === genre;
+      const ageOk = ageGroup === "all" || b.age_group === ageGroup;
       const qOk =
         !q ||
         b.title.toLowerCase().includes(q.toLowerCase()) ||
         b.author.toLowerCase().includes(q.toLowerCase());
-      return genreOk && qOk;
+      return genreOk && ageOk && qOk;
     });
-  }, [books, genre, q]);
+  }, [books, genre, ageGroup, q]);
 
   return (
     <div className="min-h-screen bg-[#FDFBF7] pb-32">
@@ -61,21 +76,39 @@ export default function Catalog() {
         </motion.div>
 
         <div className="mt-10 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-          <div className="flex flex-wrap gap-2" data-testid="genre-filters">
-            {GENRES.map((g) => (
-              <button
-                key={g}
-                data-testid={`genre-filter-${g.toLowerCase().replace(/[^a-z]+/g, "-")}`}
-                onClick={() => setGenre(g)}
-                className={`rounded-full px-4 py-2 text-xs font-semibold transition-colors ${
-                  genre === g
-                    ? "bg-[#0F172A] text-[#FDFBF7]"
-                    : "border border-[#F1E8DC] bg-white text-[#64748B] hover:border-[#0284C7] hover:text-[#0284C7]"
-                }`}
-              >
-                {g}
-              </button>
-            ))}
+          <div className="space-y-3">
+            <div className="flex flex-wrap gap-2" data-testid="age-filters">
+              {AGE_GROUPS.map((a) => (
+                <button
+                  key={a.id}
+                  data-testid={`age-filter-${a.id}`}
+                  onClick={() => setAgeGroup(a.id)}
+                  className={`rounded-full px-4 py-2 text-xs font-extrabold transition-all active:scale-95 ${
+                    ageGroup === a.id
+                      ? "bg-[#F59E0B] text-[#78350F] shadow-md"
+                      : "border-2 border-[#F1E8DC] bg-white text-[#64748B] hover:border-[#F59E0B] hover:text-[#78350F]"
+                  }`}
+                >
+                  {a.label}
+                </button>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-2" data-testid="genre-filters">
+              {GENRES.map((g) => (
+                <button
+                  key={g}
+                  data-testid={`genre-filter-${g.toLowerCase().replace(/[^a-z]+/g, "-")}`}
+                  onClick={() => setGenre(g)}
+                  className={`rounded-full px-4 py-2 text-xs font-semibold transition-colors ${
+                    genre === g
+                      ? "bg-[#0F172A] text-[#FDFBF7]"
+                      : "border border-[#F1E8DC] bg-white text-[#64748B] hover:border-[#0284C7] hover:text-[#0284C7]"
+                  }`}
+                >
+                  {g}
+                </button>
+              ))}
+            </div>
           </div>
           <div className="flex items-center gap-2 rounded-full border border-[#F1E8DC] bg-white px-4 py-2.5 lg:w-72">
             <Search className="h-4 w-4 text-[#94A3B8]" />
