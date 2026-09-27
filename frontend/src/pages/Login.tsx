@@ -38,20 +38,20 @@ export default function Login() {
   };
 
   return (
-    <div className="flex min-h-screen bg-[#FAF7F2]">
-      <div className="relative hidden w-[42%] overflow-hidden bg-[#14110F] lg:block">
+    <div className="flex min-h-screen bg-[#FDFBF7]">
+      <div className="relative hidden w-[42%] overflow-hidden bg-[#0F172A] lg:block">
         <img src={SIDE_IMG} alt="Hands holding an open novel over a warm drink" className="absolute inset-0 h-full w-full object-cover opacity-55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#14110F]/95 via-[#14110F]/40 to-[#14110F]/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/95 via-[#0F172A]/40 to-[#0F172A]/60" />
         <div className="relative flex h-full flex-col justify-between p-12">
           <Link to="/" className="flex items-center gap-2.5">
             <Logo className="h-9 w-9" />
-            <span className="font-display text-xl font-semibold text-[#FAF7F2]">RentARead</span>
+            <span className="font-display text-xl font-semibold text-[#FDFBF7]">RentARead</span>
           </Link>
           <div>
-            <p className="font-display text-3xl font-semibold italic leading-snug text-[#FAF7F2]">
-              “Reading gives us someplace to go when we have to stay where we are.”
+            <p className="font-display text-3xl font-bold leading-snug text-[#FDFBF7]">
+              “Once you learn to read, you will be forever free.”
             </p>
-            <p className="mt-3 text-xs uppercase tracking-[0.15em] text-[#D6CEBF]">— Mason Cooley</p>
+            <p className="mt-3 text-xs uppercase tracking-[0.15em] text-[#CBD5E1]">— Frederick Douglass</p>
           </div>
         </div>
       </div>
@@ -65,10 +65,10 @@ export default function Login() {
         >
           <Link to="/" className="mb-10 flex items-center gap-2.5 lg:hidden">
             <Logo className="h-8 w-8" />
-            <span className="font-display text-lg font-semibold text-[#1C1917]">RentARead</span>
+            <span className="font-display text-lg font-semibold text-[#0F172A]">RentARead</span>
           </Link>
-          <h1 className="font-display text-3xl font-semibold tracking-tight text-[#1C1917]">Welcome back, reader</h1>
-          <p className="mt-2 text-sm text-[#57534E]">Your next four books are waiting on the shelf.</p>
+          <h1 className="font-display text-3xl font-semibold tracking-tight text-[#0F172A]">Welcome back, reader</h1>
+          <p className="mt-2 text-sm text-[#64748B]">Your next four books are waiting on the shelf.</p>
 
           <form onSubmit={(e) => void submit(e)} className="mt-8 space-y-5" data-testid="login-form">
             <div className="space-y-2">
@@ -90,7 +90,7 @@ export default function Login() {
                 <Link
                   to="/forgot-password"
                   data-testid="forgot-password-link"
-                  className="text-xs font-semibold text-[#9A3412] underline-offset-4 hover:underline"
+                  className="text-xs font-semibold text-[#0284C7] underline-offset-4 hover:underline"
                 >
                   Forgot password?
                 </Link>
@@ -107,7 +107,7 @@ export default function Login() {
               />
             </div>
             {error && (
-              <p data-testid="login-error-message" className="rounded-lg bg-[#B91C1C]/10 px-4 py-3 text-sm text-[#B91C1C]">
+              <p data-testid="login-error-message" className="rounded-lg bg-[#DC2626]/10 px-4 py-3 text-sm text-[#DC2626]">
                 {error}
               </p>
             )}
@@ -115,16 +115,16 @@ export default function Login() {
               data-testid="login-form-submit-button"
               type="submit"
               disabled={busy}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-[#9A3412] py-3.5 text-sm font-semibold text-[#FAF7F2] transition-colors hover:bg-[#7C2D12] disabled:opacity-50"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-[#0284C7] py-3.5 text-sm font-semibold text-[#FDFBF7] transition-colors hover:bg-[#0369A1] disabled:opacity-50"
             >
               {busy && <Loader2 className="h-4 w-4 animate-spin" />}
               Log in
             </button>
           </form>
 
-          <p className="mt-8 text-sm text-[#57534E]">
+          <p className="mt-8 text-sm text-[#64748B]">
             New to RentARead?{" "}
-            <Link to="/signup" className="font-semibold text-[#9A3412] underline-offset-4 hover:underline" data-testid="login-signup-link">
+            <Link to="/signup" className="font-semibold text-[#0284C7] underline-offset-4 hover:underline" data-testid="login-signup-link">
               Join the library
             </Link>
           </p>

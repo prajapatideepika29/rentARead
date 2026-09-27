@@ -29,6 +29,12 @@ FR-01 pincode access control · FR-02 3-month subscription mgmt · FR-03 invento
 - Mobile UX: hamburger menu with all nav links + auth actions; hash links (#how/#pricing) smooth-scroll
 - Toys vertical placeholder: "Books today. Toys tomorrow." section with a real waitlist (POST /api/waitlist, email+pincode, duplicate-safe)
 
+## Implemented (27 Sep 2026 — kid-friendly retheme)
+- Whole-site storybook pastel retheme (design_guidelines.json v2): cream #FDFBF7 canvas, sky blue #0284C7 primary, leaf green #16A34A, sunny #F59E0B, navy ink #0F172A; Poppins display/headings + DM Sans body
+- Light hero with pastel blobs, sticker badges, wiggly underline, kids-reading photo card, 5-star family badge; wave divider; colorful numbered step cards; bento + pricing refreshed; white glass bundle dock
+- Copy re-toned to upbeat family voice ("As easy as story time", "The Toy Trunk", pizza-night pricing)
+- All routes, endpoints, testids, and flows unchanged; typecheck clean
+
 ## Backlog
 - P0: Real WhatsApp Business API; real payment gateway (Stripe/Razorpay)
 - P1: Scheduled day-27/29 reminder worker; pickup scheduling UI; address management

@@ -51,33 +51,33 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex min-h-screen bg-[#FAF7F2]">
-      <div className="relative hidden w-[42%] bg-[#1C1917] p-12 lg:flex lg:flex-col lg:justify-between">
+    <div className="flex min-h-screen bg-[#FDFBF7]">
+      <div className="relative hidden w-[42%] bg-[#0F172A] p-12 lg:flex lg:flex-col lg:justify-between">
         <Link to="/" className="flex items-center gap-2.5">
           <Logo className="h-9 w-9" />
-          <span className="font-display text-xl font-semibold text-[#FAF7F2]">RentARead</span>
+          <span className="font-display text-xl font-semibold text-[#FDFBF7]">RentARead</span>
         </Link>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#FDBA74]">The quarterly plan</p>
-          <h2 className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight text-[#FAF7F2]">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#FDE047]">The quarterly plan</p>
+          <h2 className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight text-[#FDFBF7]">
             3 months.
             <br />
             12 books.
             <br />
-            <span className="italic text-[#FDBA74]">₹1,499 flat.</span>
+            <span className="italic text-[#FDE047]">₹1,499 flat.</span>
           </h2>
           <ul className="mt-10 space-y-5">
             {PERKS.map((p) => (
-              <li key={p.text} className="flex items-center gap-3 text-sm text-[#D6CEBF]">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FAF7F2]/10">
-                  <p.icon className="h-4 w-4 text-[#FDBA74]" />
+              <li key={p.text} className="flex items-center gap-3 text-sm text-[#CBD5E1]">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FDFBF7]/10">
+                  <p.icon className="h-4 w-4 text-[#FDE047]" />
                 </span>
                 {p.text}
               </li>
             ))}
           </ul>
         </div>
-        <p className="text-xs text-[#A8A29E]">No deposit. No late fees. No fine print worth squinting at.</p>
+        <p className="text-xs text-[#94A3B8]">No deposit. No late fees. No fine print worth squinting at.</p>
       </div>
 
       <div className="flex flex-1 items-center justify-center px-6 py-16">
@@ -89,10 +89,10 @@ export default function Signup() {
         >
           <Link to="/" className="mb-10 flex items-center gap-2.5 lg:hidden">
             <Logo className="h-8 w-8" />
-            <span className="font-display text-lg font-semibold text-[#1C1917]">RentARead</span>
+            <span className="font-display text-lg font-semibold text-[#0F172A]">RentARead</span>
           </Link>
-          <h1 className="font-display text-3xl font-semibold tracking-tight text-[#1C1917]">Claim your shelf</h1>
-          <p className="mt-2 text-sm text-[#57534E]">First, tell us where the books should go.</p>
+          <h1 className="font-display text-3xl font-semibold tracking-tight text-[#0F172A]">Claim your shelf</h1>
+          <p className="mt-2 text-sm text-[#64748B]">First, tell us where the books should go.</p>
 
           <form onSubmit={(e) => void submit(e)} className="mt-8 space-y-5" data-testid="signup-form">
             <div className="space-y-2">
@@ -117,7 +117,7 @@ export default function Signup() {
               <Input id="signup-password" data-testid="signup-password-input" type="password" required minLength={6} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="6+ characters" className="bg-white" />
             </div>
             {error && (
-              <p data-testid="signup-error-message" className="rounded-lg bg-[#B91C1C]/10 px-4 py-3 text-sm text-[#B91C1C]">
+              <p data-testid="signup-error-message" className="rounded-lg bg-[#DC2626]/10 px-4 py-3 text-sm text-[#DC2626]">
                 {error}
               </p>
             )}
@@ -125,16 +125,16 @@ export default function Signup() {
               data-testid="signup-form-submit-button"
               type="submit"
               disabled={busy || !pinOk}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-[#9A3412] py-3.5 text-sm font-semibold text-[#FAF7F2] transition-colors hover:bg-[#7C2D12] disabled:opacity-50"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-[#0284C7] py-3.5 text-sm font-semibold text-[#FDFBF7] transition-colors hover:bg-[#0369A1] disabled:opacity-50"
             >
               {busy && <Loader2 className="h-4 w-4 animate-spin" />}
               {pinOk ? "Create my account" : "Check your pincode to continue"}
             </button>
           </form>
 
-          <p className="mt-8 text-sm text-[#57534E]">
+          <p className="mt-8 text-sm text-[#64748B]">
             Already a member?{" "}
-            <Link to="/login" className="font-semibold text-[#9A3412] underline-offset-4 hover:underline" data-testid="signup-login-link">
+            <Link to="/login" className="font-semibold text-[#0284C7] underline-offset-4 hover:underline" data-testid="signup-login-link">
               Log in
             </Link>
           </p>

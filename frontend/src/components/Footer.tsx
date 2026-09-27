@@ -13,7 +13,7 @@ const PINCODES = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#1C1917] text-[#FAF7F2]">
+    <footer className="bg-[#0F172A] text-[#FDFBF7]">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
@@ -21,31 +21,31 @@ export function Footer() {
               <Logo className="h-9 w-9" />
               <span className="font-display text-2xl font-semibold">RentARead</span>
             </div>
-            <p className="mt-5 max-w-sm font-heading text-lg italic leading-relaxed text-[#D6CEBF]">
-              “A room without books is like a body without a soul.”
+            <p className="mt-5 max-w-sm font-heading text-lg leading-relaxed text-[#CBD5E1]">
+              “Children are made readers on the laps of their parents.”
             </p>
-            <p className="mt-2 text-xs uppercase tracking-[0.15em] text-[#A8A29E]">— Cicero</p>
+            <p className="mt-2 text-xs uppercase tracking-[0.15em] text-[#94A3B8]">— Emilie Buchwald</p>
           </div>
 
           <div className="md:col-span-4">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#D6CEBF]">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#CBD5E1]">
               Now delivering in
             </h4>
-            <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-[#A8A29E]">
+            <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-[#94A3B8]">
               {PINCODES.map((p) => (
                 <li key={p.code} data-testid={`footer-pincode-${p.code}`}>
-                  <span className="font-mono text-[#FDBA74]">{p.code}</span> · {p.hub}
+                  <span className="font-mono text-[#FDE047]">{p.code}</span> · {p.hub}
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="md:col-span-3">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#D6CEBF]">Explore</h4>
-            <ul className="mt-4 space-y-2 text-sm text-[#A8A29E]">
-              <li><Link to="/catalog" className="transition-colors hover:text-[#FDBA74]">Browse the catalog</Link></li>
-              <li><Link to="/subscription" className="transition-colors hover:text-[#FDBA74]">Quarterly plan</Link></li>
-              <li><Link to="/dashboard" className="transition-colors hover:text-[#FDBA74]">Member dashboard</Link></li>
+            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#CBD5E1]">Explore</h4>
+            <ul className="mt-4 space-y-2 text-sm text-[#94A3B8]">
+              <li><Link to="/catalog" className="transition-colors hover:text-[#FDE047]">Browse the catalog</Link></li>
+              <li><Link to="/subscription" className="transition-colors hover:text-[#FDE047]">Quarterly plan</Link></li>
+              <li><Link to="/dashboard" className="transition-colors hover:text-[#FDE047]">Member dashboard</Link></li>
               <li>
                 <a
                   href="https://wa.me/919999999999"
@@ -60,7 +60,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-2 border-t border-[#FAF7F2]/10 pt-6 text-xs text-[#A8A29E] sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-2 border-t border-[#FDFBF7]/10 pt-6 text-xs text-[#94A3B8] sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} RentARead. Twice-read, thrice-loved.</span>
           <span>3 months · 12 books · ₹1,499 · zero deposit</span>
         </div>

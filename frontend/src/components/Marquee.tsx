@@ -11,15 +11,15 @@ const QUOTES = [
 // One slow editorial ribbon. Content rendered twice so the -50% loop is seamless.
 export function Marquee() {
   return (
-    <div className="overflow-hidden border-y border-[#E7DFD5] bg-[#F5EFEB] py-4" aria-hidden="true">
+    <div className="overflow-hidden border-y border-[#F1E8DC] bg-[#F0F9FF] py-4" aria-hidden="true">
       <div className="marquee-track flex w-max items-center gap-12">
         {[...QUOTES, ...QUOTES].map((q, i) => (
           <span
             key={i}
-            className="flex items-center gap-12 whitespace-nowrap font-heading text-sm italic text-[#57534E]"
+            className="flex items-center gap-12 whitespace-nowrap font-heading text-sm text-[#64748B]"
           >
             {q}
-            <span className="h-1.5 w-1.5 rounded-full bg-[#9A3412]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#0284C7]" />
           </span>
         ))}
       </div>

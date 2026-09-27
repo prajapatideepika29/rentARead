@@ -37,13 +37,13 @@ export function PincodeChecker({ dark = false, onResult }: Props) {
   return (
     <div className="w-full max-w-md">
       <div
-        className={`flex items-center gap-2 rounded-full border p-1.5 pl-4 transition-colors ${
+        className={`flex items-center gap-2 rounded-full border-2 p-1.5 pl-4 transition-colors ${
           dark
-            ? "border-[#FAF7F2]/25 bg-[#FAF7F2]/10 focus-within:border-[#FDBA74]"
-            : "border-[#E7DFD5] bg-white focus-within:border-[#9A3412]"
+            ? "border-[#FDFBF7]/25 bg-[#FDFBF7]/10 focus-within:border-[#FDE047]"
+            : "border-[#BAE6FD] bg-white focus-within:border-[#0284C7]"
         }`}
       >
-        <MapPin className={`h-4 w-4 shrink-0 ${dark ? "text-[#FDBA74]" : "text-[#9A3412]"}`} />
+        <MapPin className={`h-4 w-4 shrink-0 ${dark ? "text-[#FDE047]" : "text-[#0284C7]"}`} />
         <input
           data-testid="pincode-input"
           value={pin}
@@ -55,16 +55,16 @@ export function PincodeChecker({ dark = false, onResult }: Props) {
           placeholder="Enter your 6-digit pincode"
           inputMode="numeric"
           className={`w-full bg-transparent text-sm outline-none placeholder:text-sm ${
-            dark ? "text-[#FAF7F2] placeholder:text-[#D6CEBF]/60" : "text-[#1C1917] placeholder:text-[#A8A29E]"
+            dark ? "text-[#FDFBF7] placeholder:text-[#CBD5E1]/60" : "text-[#0F172A] placeholder:text-[#94A3B8]"
           }`}
         />
         <button
           data-testid="pincode-check-button"
           onClick={() => void check()}
           disabled={!/^\d{6}$/.test(pin) || loading}
-          className="flex shrink-0 items-center gap-1.5 rounded-full bg-[#9A3412] px-5 py-2.5 text-sm font-semibold text-[#FAF7F2] transition-colors hover:bg-[#7C2D12] disabled:opacity-40"
+          className="flex shrink-0 items-center gap-1.5 rounded-full bg-[#0284C7] px-5 py-2.5 text-sm font-bold text-white transition-all hover:bg-[#0369A1] active:translate-y-0.5 disabled:opacity-40"
         >
-          {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Check"}
+          {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Check delivery"}
         </button>
       </div>
 
@@ -78,7 +78,7 @@ export function PincodeChecker({ dark = false, onResult }: Props) {
                 : "text-[#15803D]"
               : dark
                 ? "text-[#FCA5A5]"
-                : "text-[#B91C1C]"
+                : "text-[#DC2626]"
           }`}
         >
           {result.serviceable ? (

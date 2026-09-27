@@ -38,7 +38,7 @@ export default function ResetPassword() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#FAF7F2] px-6 py-16">
+    <div className="flex min-h-screen items-center justify-center bg-[#FDFBF7] px-6 py-16">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
@@ -47,27 +47,27 @@ export default function ResetPassword() {
       >
         <Link to="/" className="mb-10 flex items-center justify-center gap-2.5">
           <Logo className="h-9 w-9" />
-          <span className="font-display text-xl font-semibold text-[#1C1917]">RentARead</span>
+          <span className="font-display text-xl font-semibold text-[#0F172A]">RentARead</span>
         </Link>
 
         {!token ? (
           <div className="text-center" data-testid="reset-invalid">
-            <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#B91C1C]/10">
-              <Link2Off className="h-8 w-8 text-[#B91C1C]" />
+            <span className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#DC2626]/10">
+              <Link2Off className="h-8 w-8 text-[#DC2626]" />
             </span>
-            <h1 className="mt-6 font-display text-3xl font-semibold tracking-tight text-[#1C1917]">This link is incomplete</h1>
-            <p className="mt-3 text-sm text-[#57534E]">Use the full link from your reset email, or request a fresh one.</p>
+            <h1 className="mt-6 font-display text-3xl font-semibold tracking-tight text-[#0F172A]">This link is incomplete</h1>
+            <p className="mt-3 text-sm text-[#64748B]">Use the full link from your reset email, or request a fresh one.</p>
             <Link
               to="/forgot-password"
-              className="mt-8 inline-block rounded-full bg-[#1C1917] px-8 py-3 text-sm font-semibold text-[#FAF7F2] transition-colors hover:bg-[#9A3412]"
+              className="mt-8 inline-block rounded-full bg-[#0F172A] px-8 py-3 text-sm font-semibold text-[#FDFBF7] transition-colors hover:bg-[#0284C7]"
             >
               Request a new link
             </Link>
           </div>
         ) : (
           <>
-            <h1 className="text-center font-display text-3xl font-semibold tracking-tight text-[#1C1917]">Choose a new password</h1>
-            <p className="mt-3 text-center text-sm text-[#57534E]">At least 6 characters — make it a good one.</p>
+            <h1 className="text-center font-display text-3xl font-semibold tracking-tight text-[#0F172A]">Choose a new password</h1>
+            <p className="mt-3 text-center text-sm text-[#64748B]">At least 6 characters — make it a good one.</p>
             <form onSubmit={(e) => void submit(e)} className="mt-8 space-y-5" data-testid="reset-form">
               <div className="space-y-2">
                 <Label htmlFor="reset-password">New password</Label>
@@ -98,7 +98,7 @@ export default function ResetPassword() {
                 />
               </div>
               {error && (
-                <p data-testid="reset-error-message" className="rounded-lg bg-[#B91C1C]/10 px-4 py-3 text-sm text-[#B91C1C]">
+                <p data-testid="reset-error-message" className="rounded-lg bg-[#DC2626]/10 px-4 py-3 text-sm text-[#DC2626]">
                   {error}
                 </p>
               )}
@@ -106,7 +106,7 @@ export default function ResetPassword() {
                 data-testid="reset-submit-button"
                 type="submit"
                 disabled={busy}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-[#9A3412] py-3.5 text-sm font-semibold text-[#FAF7F2] transition-colors hover:bg-[#7C2D12] disabled:opacity-50"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-[#0284C7] py-3.5 text-sm font-semibold text-[#FDFBF7] transition-colors hover:bg-[#0369A1] disabled:opacity-50"
               >
                 {busy && <Loader2 className="h-4 w-4 animate-spin" />}
                 Update password

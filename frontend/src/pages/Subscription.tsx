@@ -58,7 +58,7 @@ export default function Subscription() {
   const active = sub?.status === "active";
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2]">
+    <div className="min-h-screen bg-[#FDFBF7]">
       <Navbar />
 
       <section className="mx-auto max-w-7xl px-4 pb-24 pt-28 sm:px-6 lg:px-8">
@@ -68,32 +68,32 @@ export default function Subscription() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9A3412]">Membership</p>
-            <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-[#1C1917] sm:text-4xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#0284C7]">Membership</p>
+            <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-[#0F172A] sm:text-4xl">
               The Quarterly Reading Plan
             </h1>
-            <p className="mt-4 max-w-lg text-base leading-relaxed text-[#57534E]">
+            <p className="mt-4 max-w-lg text-base leading-relaxed text-[#64748B]">
               One payment, a whole season of reading. Four books a month, delivered and collected
               from your doorstep, with WhatsApp keeping the dates straight so you don't have to.
             </p>
 
-            <ol className="mt-10 space-y-0 border-l-2 border-[#E7DFD5]">
+            <ol className="mt-10 space-y-0 border-l-2 border-[#F1E8DC]">
               {TIMELINE.map(([title, body], i) => (
                 <li key={title} className="relative pb-8 pl-8 last:pb-0">
-                  <span className="absolute -left-[9px] top-1 flex h-4 w-4 items-center justify-center rounded-full border-2 border-[#9A3412] bg-[#FAF7F2]">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#9A3412]" />
+                  <span className="absolute -left-[9px] top-1 flex h-4 w-4 items-center justify-center rounded-full border-2 border-[#0284C7] bg-[#FDFBF7]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#0284C7]" />
                   </span>
-                  <p className="font-heading text-base font-semibold text-[#1C1917]">
-                    {title} <span className="ml-2 text-xs font-normal uppercase tracking-wide text-[#A8A29E]">cycle {i + 1} of 3</span>
+                  <p className="font-heading text-base font-semibold text-[#0F172A]">
+                    {title} <span className="ml-2 text-xs font-normal uppercase tracking-wide text-[#94A3B8]">cycle {i + 1} of 3</span>
                   </p>
-                  <p className="mt-1 text-sm text-[#57534E]">{body}</p>
+                  <p className="mt-1 text-sm text-[#64748B]">{body}</p>
                 </li>
               ))}
             </ol>
 
             <div className="mt-10 flex items-start gap-3 rounded-xl bg-[#075E54]/10 p-5">
               <MessageCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#075E54]" />
-              <p className="text-sm leading-relaxed text-[#1C1917]">
+              <p className="text-sm leading-relaxed text-[#0F172A]">
                 We message you on WhatsApp four times a month — order confirmed, out for delivery,
                 a reminder 3 days before pickup, and pickup complete. Nothing else, ever.
               </p>
@@ -104,15 +104,15 @@ export default function Subscription() {
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-2xl bg-[#1C1917] p-10 text-[#FAF7F2] shadow-2xl lg:sticky lg:top-24"
+            className="rounded-2xl bg-[#0F172A] p-10 text-[#FDFBF7] shadow-2xl lg:sticky lg:top-24"
             data-testid="subscription-card"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FDBA74]">Quarterly Reading Plan</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FDE047]">Quarterly Reading Plan</p>
             <div className="mt-4 flex items-baseline gap-2">
               <span className="font-display text-6xl font-semibold tracking-tight">₹1,499</span>
-              <span className="text-sm text-[#D6CEBF]">one-time, 3 months</span>
+              <span className="text-sm text-[#CBD5E1]">one-time, 3 months</span>
             </div>
-            <ul className="mt-8 space-y-3 border-t border-[#FAF7F2]/10 pt-8 text-sm text-[#D6CEBF]">
+            <ul className="mt-8 space-y-3 border-t border-[#FDFBF7]/10 pt-8 text-sm text-[#CBD5E1]">
               {[
                 "12 books total — 4 each month",
                 "Free delivery & return pickup",
@@ -120,7 +120,7 @@ export default function Subscription() {
                 "WhatsApp reminders on day 27 and day 29",
               ].map((line) => (
                 <li key={line} className="flex items-center gap-2.5">
-                  <BadgeCheck className="h-4 w-4 shrink-0 text-[#FDBA74]" />
+                  <BadgeCheck className="h-4 w-4 shrink-0 text-[#FDE047]" />
                   {line}
                 </li>
               ))}
@@ -128,13 +128,13 @@ export default function Subscription() {
 
             {active ? (
               <div className="mt-8" data-testid="subscription-active-state">
-                <p className="rounded-xl bg-[#2B533E] px-5 py-4 text-sm font-medium">
+                <p className="rounded-xl bg-[#16A34A] px-5 py-4 text-sm font-medium">
                   Your plan is active — {sub.books_rented_total} of 12 books rented so far.
                 </p>
                 <button
                   data-testid="go-to-catalog-button"
                   onClick={() => navigate("/catalog")}
-                  className="mt-4 w-full rounded-full bg-[#9A3412] py-4 text-sm font-semibold transition-colors hover:bg-[#C2410C]"
+                  className="mt-4 w-full rounded-full bg-[#0284C7] py-4 text-sm font-semibold transition-colors hover:bg-[#0EA5E9]"
                 >
                   Choose this month's books
                 </button>
@@ -143,27 +143,27 @@ export default function Subscription() {
               <button
                 data-testid="subscribe-now-button"
                 onClick={() => setPayOpen(true)}
-                className="mt-8 w-full rounded-full bg-[#9A3412] py-4 text-sm font-semibold transition-colors hover:bg-[#C2410C]"
+                className="mt-8 w-full rounded-full bg-[#0284C7] py-4 text-sm font-semibold transition-colors hover:bg-[#0EA5E9]"
               >
                 Pay ₹1,499 & start
               </button>
             )}
-            <p className="mt-4 text-center text-xs text-[#A8A29E]">Demo checkout — no real money moves.</p>
+            <p className="mt-4 text-center text-xs text-[#94A3B8]">Demo checkout — no real money moves.</p>
           </motion.div>
         </div>
       </section>
 
       <Dialog open={payOpen} onOpenChange={setPayOpen}>
-        <DialogContent className="bg-[#FAF7F2] sm:max-w-md" data-testid="payment-dialog">
+        <DialogContent className="bg-[#FDFBF7] sm:max-w-md" data-testid="payment-dialog">
           <DialogHeader>
-            <DialogTitle className="font-display text-2xl text-[#1C1917]">Checkout — ₹1,499</DialogTitle>
+            <DialogTitle className="font-display text-2xl text-[#0F172A]">Checkout — ₹1,499</DialogTitle>
           </DialogHeader>
           <div className="mt-2 grid grid-cols-2 gap-2">
             <button
               data-testid="pay-method-upi"
               onClick={() => setMethod("upi")}
               className={`flex items-center justify-center gap-2 rounded-xl border py-3 text-sm font-semibold transition-colors ${
-                method === "upi" ? "border-[#9A3412] bg-[#9A3412]/10 text-[#9A3412]" : "border-[#E7DFD5] bg-white text-[#57534E]"
+                method === "upi" ? "border-[#0284C7] bg-[#0284C7]/10 text-[#0284C7]" : "border-[#F1E8DC] bg-white text-[#64748B]"
               }`}
             >
               <Smartphone className="h-4 w-4" /> UPI
@@ -172,7 +172,7 @@ export default function Subscription() {
               data-testid="pay-method-card"
               onClick={() => setMethod("card")}
               className={`flex items-center justify-center gap-2 rounded-xl border py-3 text-sm font-semibold transition-colors ${
-                method === "card" ? "border-[#9A3412] bg-[#9A3412]/10 text-[#9A3412]" : "border-[#E7DFD5] bg-white text-[#57534E]"
+                method === "card" ? "border-[#0284C7] bg-[#0284C7]/10 text-[#0284C7]" : "border-[#F1E8DC] bg-white text-[#64748B]"
               }`}
             >
               <CreditCard className="h-4 w-4" /> Card
@@ -205,7 +205,7 @@ export default function Subscription() {
             data-testid="payment-mock-submit"
             onClick={pay}
             disabled={paying}
-            className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-[#1C1917] py-3.5 text-sm font-semibold text-[#FAF7F2] transition-colors hover:bg-[#9A3412] disabled:opacity-60"
+            className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-[#0F172A] py-3.5 text-sm font-semibold text-[#FDFBF7] transition-colors hover:bg-[#0284C7] disabled:opacity-60"
           >
             {paying ? (
               <>
@@ -215,7 +215,7 @@ export default function Subscription() {
               "Pay ₹1,499"
             )}
           </button>
-          <p className="text-center text-xs text-[#A8A29E]">Mocked payment — instant confirmation, zero charge.</p>
+          <p className="text-center text-xs text-[#94A3B8]">Mocked payment — instant confirmation, zero charge.</p>
         </DialogContent>
       </Dialog>
 

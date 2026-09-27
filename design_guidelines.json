@@ -1,231 +1,317 @@
 {
-  "brand": {
-    "name": "RentARead",
-    "tagline": "Your neighborhood library, curated and delivered to your doorstep.",
-    "concept": "Independent bookshop aesthetic meets modern hyper-local subscription service. Warm, tactile, literary, and deeply trustworthy.",
-    "target_locale": "en-IN",
-    "currency_symbol": "₹",
-    "quarterly_price": 1499,
-    "quarterly_price_formatted": "₹1,499",
-    "plan_details": "3 Months • 12 Books Total (4 Books / Month) • Zero Security Deposit • Free Doorstep Delivery & Pickup"
+  "theme": "light",
+  "archetype": "Pastel & Soft with Playful Storybook Charm (Kid-Friendly & Parent-Trustworthy)",
+  "overview": {
+    "brand_name": "RentARead",
+    "mission": "Localized quarterly book rental membership for kids & parents — 4 fresh books every month (12 total/quarter) delivered to your door with WhatsApp magic, effortless swap-cycles, and zero clutter.",
+    "retheme_vision": "Whole-site playful retheme: soft storybook cream canvas, sky blue horizons, fresh leaf green accents, sunny warm yellow highlights, friendly chunky rounded shapes (rounded-2xl to rounded-3xl), playful sticker badges, wiggly underlines, cloud/wave dividers, and upbeat parent-trustworthy micro-interactions. All functional flows (pincode checks, 4-book dock, mock checkout, dashboard due countdowns, WhatsApp log, toys waitlist, auth) stay completely intact."
   },
   "colors": {
     "surfaces": [
       {
         "name": "page",
         "kind": "solid",
-        "bg": "#FAF7F2",
-        "on_bg": "#1C1917",
-        "on_bg_muted": "#57534E",
+        "bg": "#FDFBF7",
+        "on_bg": "#1E293B",
+        "on_bg_muted": "#64748B",
         "roles": {
-          "link": "#9A3412",
-          "error": "#B91C1C",
-          "success": "#15803D",
-          "accent_highlight": "#C2410C"
+          "link": "#0284C7",
+          "error": "#DC2626",
+          "success": "#16A34A",
+          "warning": "#D97706"
         }
       },
       {
-        "name": "panel",
+        "name": "card_white",
         "kind": "solid",
         "bg": "#FFFFFF",
-        "on_bg": "#1C1917",
-        "on_bg_muted": "#57534E",
+        "on_bg": "#0F172A",
+        "on_bg_muted": "#64748B",
         "roles": {
-          "link": "#9A3412",
-          "error": "#B91C1C",
-          "success": "#15803D"
+          "border": "#F1E8DC",
+          "hover_border": "#BAE6FD"
         }
       },
       {
-        "name": "card_parchment",
+        "name": "soft_sky_panel",
         "kind": "solid",
-        "bg": "#F5EFEB",
-        "on_bg": "#1C1917",
-        "on_bg_muted": "#57534E",
+        "bg": "#F0F9FF",
+        "on_bg": "#0C4A6E",
+        "on_bg_muted": "#0369A1",
         "roles": {
-          "link": "#9A3412",
-          "border": "#E7DFD5"
+          "accent": "#0284C7"
         }
       },
       {
-        "name": "hero",
-        "kind": "image",
-        "contrast_against": "#14110F",
-        "guarantee": "scrim: linear-gradient(135deg, rgba(20, 17, 15, 0.92) 0%, rgba(28, 25, 23, 0.82) 60%, rgba(41, 37, 36, 0.75) 100%)",
-        "on_bg": "#FAF7F2",
-        "on_bg_muted": "#D6CEBF",
-        "roles": {
-          "link": "#FDBA74",
-          "error": "#FCA5A5",
-          "success": "#86EFAC"
-        }
-      },
-      {
-        "name": "inverse",
+        "name": "soft_mint_panel",
         "kind": "solid",
-        "bg": "#1C1917",
-        "on_bg": "#FAF7F2",
-        "on_bg_muted": "#D6CEBF",
+        "bg": "#F0FDF4",
+        "on_bg": "#14532D",
+        "on_bg_muted": "#15803D",
         "roles": {
-          "link": "#FDBA74",
-          "error": "#FCA5A5",
-          "success": "#86EFAC"
+          "accent": "#16A34A"
         }
       },
       {
-        "name": "navbar_glass",
-        "kind": "glass",
-        "contrast_against": "#FAF7F2",
-        "guarantee": "backdrop-blur-xl bg-[#FAF7F2]/85 border-b border-[#E7DFD5]/80",
-        "on_bg": "#1C1917",
-        "on_bg_muted": "#57534E",
-        "roles": {
-          "link": "#9A3412"
-        }
-      },
-      {
-        "name": "whatsapp_toast",
+        "name": "soft_sun_panel",
         "kind": "solid",
-        "bg": "#075E54",
+        "bg": "#FEFCE8",
+        "on_bg": "#713F12",
+        "on_bg_muted": "#A16207",
+        "roles": {
+          "accent": "#D97706"
+        }
+      },
+      {
+        "name": "soft_lavender_panel",
+        "kind": "solid",
+        "bg": "#FAF5FF",
+        "on_bg": "#581C87",
+        "on_bg_muted": "#7E22CE",
+        "roles": {
+          "accent": "#9333EA"
+        }
+      },
+      {
+        "name": "primary_button",
+        "kind": "solid",
+        "bg": "#0284C7",
         "on_bg": "#FFFFFF",
-        "on_bg_muted": "#D1E7DD",
+        "on_bg_muted": "#E0F2FE",
         "roles": {
-          "link": "#25D366"
+          "hover": "#0369A1",
+          "active": "#075985"
         }
       },
       {
-        "name": "badge_status",
+        "name": "secondary_green_button",
         "kind": "solid",
-        "bg": "#FEF3C7",
+        "bg": "#16A34A",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#DCFCE7",
+        "roles": {
+          "hover": "#15803D",
+          "active": "#166534"
+        }
+      },
+      {
+        "name": "sunny_accent_button",
+        "kind": "solid",
+        "bg": "#F59E0B",
         "on_bg": "#78350F",
-        "on_bg_muted": "#92400E"
+        "on_bg_muted": "#92400E",
+        "roles": {
+          "hover": "#D97706",
+          "active": "#B45309"
+        }
+      },
+      {
+        "name": "dark_playful_footer",
+        "kind": "solid",
+        "bg": "#0F172A",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "link": "#38BDF8",
+          "accent": "#FDE047"
+        }
+      },
+      {
+        "name": "whatsapp_bubble",
+        "kind": "solid",
+        "bg": "#DCFCE7",
+        "on_bg": "#14532D",
+        "on_bg_muted": "#166534"
+      },
+      {
+        "name": "dock_glass",
+        "kind": "glass",
+        "contrast_against": "#FFFFFF",
+        "guarantee": "backdrop-blur-xl bg-white/90 border-2 border-sky-200 shadow-[0_12px_40px_rgba(2,132,199,0.12)]",
+        "on_bg": "#0F172A",
+        "on_bg_muted": "#64748B",
+        "roles": {
+          "accent": "#0284C7"
+        }
       }
     ],
-    "accent": "#9A3412",
+    "accent": "#0284C7",
     "on_accent": "#FFFFFF",
-    "secondary_accent": "#2B533E",
-    "tertiary_gold": "#D97706"
+    "palette_tokens": {
+      "cream_bg": "#FDFBF7",
+      "sky_blue_50": "#F0F9FF",
+      "sky_blue_100": "#E0F2FE",
+      "sky_blue_500": "#0EA5E9",
+      "sky_blue_600": "#0284C7",
+      "sky_blue_700": "#0369A1",
+      "leaf_green_50": "#F0FDF4",
+      "leaf_green_500": "#22C55E",
+      "leaf_green_600": "#16A34A",
+      "leaf_green_700": "#15803D",
+      "sunny_yellow_50": "#FEFCE8",
+      "sunny_yellow_100": "#FEF9C3",
+      "sunny_yellow_400": "#FACC15",
+      "sunny_yellow_500": "#F59E0B",
+      "warm_amber_900": "#78350F",
+      "coral_pink_50": "#FFF1F2",
+      "coral_pink_500": "#F43F5E",
+      "ink_dark": "#0F172A",
+      "ink_body": "#1E293B",
+      "ink_muted": "#64748B",
+      "border_soft": "#F1E8DC",
+      "border_card": "#E2E8F0"
+    }
   },
   "typography": {
-    "font_families": {
-      "heading": "'Lora Variable', serif",
-      "display": "'Playfair Display Variable', serif",
-      "body": "'DM Sans Variable', -apple-system, BlinkMacSystemFont, sans-serif",
-      "mono": "'Geist Mono Variable', monospace"
-    },
+    "heading_family": "'Poppins', sans-serif",
+    "display_family": "'Poppins', sans-serif",
+    "body_family": "'DM Sans Variable', -apple-system, BlinkMacSystemFont, sans-serif",
+    "css_import_instructions": [
+      "@import \"@fontsource/poppins/400.css\";",
+      "@import \"@fontsource/poppins/600.css\";",
+      "@import \"@fontsource/poppins/700.css\";",
+      "@import \"@fontsource-variable/dm-sans\";",
+      "Set --font-heading: 'Poppins', sans-serif; --font-display: 'Poppins', sans-serif; --font-sans: 'DM Sans Variable', sans-serif;"
+    ],
     "scale_px": {
-      "display": 56,
-      "h1": 44,
-      "h2": 32,
+      "display": 60,
+      "h1": 48,
+      "h2": 36,
       "h3": 24,
-      "h4": 20,
       "body": 16,
       "caption": 14
     },
-    "letter_spacing": {
-      "display": "-0.03em",
-      "heading": "-0.02em",
-      "body": "0em",
-      "label": "0.15em"
+    "hierarchy_rules": {
+      "hero_h1": "text-4xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight text-slate-900 leading-[1.15]",
+      "section_h2": "text-2xl sm:text-3xl lg:text-4xl font-bold font-heading tracking-tight text-slate-900",
+      "card_title_h3": "text-lg sm:text-xl font-bold font-heading text-slate-900",
+      "badge_pill": "text-xs font-semibold tracking-wider uppercase",
+      "body_text": "text-base leading-relaxed text-slate-700",
+      "caption_text": "text-sm text-slate-500 leading-normal"
     }
   },
   "entry_surfaces": {
-    "/": "editorial split hero — left: literary manifesto + pincode check + primary CTA; right: dynamic book stack card showcase with ambient spotlight",
-    "/login": "branded split auth — left: warm quote & membership perks illustration panel; right: OTP & password login form",
-    "/signup": "branded split auth — left: '3 Months, 12 Books' benefit breakdown; right: registration form with pincode auto-validation",
-    "/catalog": "curated gallery layout — top filters & genre ribbon, sticky rental bundle dock (4/4 quota selector), responsive book grid with spine & jacket previews",
-    "/subscription": "editorial membership card — breakdown of ₹1,499 quarterly pricing, delivery schedule timeline, WhatsApp integration explainer, mocked UPI/Card checkout",
-    "/dashboard": "member reading sanctuary — current 4-book rack with 27-day countdown timers, swap queue, reading quota stats, WhatsApp notification simulator log"
+    "/": "storybook split hero — friendly headline, value pillars + pincode bar left, floating pastel book stack and badge showcase right",
+    "/catalog": "playful book library — pill filter ribbon top, 4-book live bundle dock sticky bottom, responsive grid of colorful book cards with age tags",
+    "/subscription": "membership plan card & mock checkout — sunny ₹1,499 quarterly highlight, WhatsApp perks badge, trust seals and address step",
+    "/dashboard": "child & parent command center — current 4-book shelf with due countdown pill, swap request CTA, and WhatsApp message log feed",
+    "/login": "storybook split login — soft sky illustrated perks panel left, chunky card form right",
+    "/signup": "storybook split signup — membership benefits banner left, 3-step chunky card form right",
+    "/forgot-password": "storybook centered recovery card — friendly lock glyph, email input, back-to-login pill",
+    "/reset-password": "storybook centered password reset card — key glyph, password inputs, secure confirmation button"
   },
-  "visual_enhancers": {
-    "textures": "Subtle paper-grain texture overlay (2% opacity) on canvas to eliminate digital sterility",
-    "borders": "1px solid #E7DFD5 (warm linen border) with 8px to 16px soft radii",
-    "marquee": "Single slow-drift editorial ribbon with quotes from classic literature and verified neighborhood readers",
-    "micro_interactions": "Book card tilt on hover, bookmark ribbon toggle animation, 4-book bundle floating pill indicator with smooth counter"
-  },
-  "motion": {
-    "page_transitions": "Subtle fade & slight y-offset (duration: 0.35s, ease: [0.22, 1, 0.36, 1])",
-    "stagger_lists": "0.05s stagger between catalog book cards",
-    "hero_reveal": "Line-by-line masked slide-up for the headline with 0.12s stagger",
-    "toast_animation": "Slide-in from bottom right with WhatsApp badge icon"
-  },
-  "accessibility": {
-    "wcag_level": "AA Compliant",
-    "min_contrast_body": "7.5:1 (Stone #1C1917 on Parchment #FAF7F2)",
-    "min_contrast_muted": "4.6:1 (Stone Muted #57534E on Parchment #FAF7F2)",
-    "focus_rings": "ring-2 ring-offset-2 ring-[#9A3412]",
-    "reduced_motion": "Framer Motion layout animations honor prefers-reduced-motion media query"
-  },
-  "grids_and_layouts": {
-    "container_max_width": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
-    "bento_grid": "Tetris-style reading perks grid (3 columns on desktop: 2-col visual hero card + 1-col stats card + 3 single-col feature cards)",
-    "catalog_grid": "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6",
-    "dashboard_grid": "lg:grid-cols-12 gap-8 with 8-col active reading shelf and 4-col subscription timeline & WhatsApp alert log"
-  },
-  "image_urls": {
-    "hero_background": {
-      "url": "https://images.unsplash.com/photo-1544456203-0af5a69f5789?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwzfHxwZXJzb24lMjByZWFkaW5nJTIwYm9vayUyMGNhZmUlMjBsaWJyYXJ5fGVufDB8fHx8MTc5MDI3MjE5NHww&ixlib=rb-4.1.0&q=85",
-      "description": "Woman reading peacefully in warm ambient wooden bookshop/library",
-      "usage": "Hero banner backdrop with dark gradient scrim"
+  "component_styling": {
+    "buttons": {
+      "style": "Chunky rounded pill or rounded-2xl buttons with solid tactile feedback",
+      "primary": "bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-full px-6 py-3 shadow-[0_4px_14px_rgba(2,132,199,0.35)] hover:shadow-[0_6px_20px_rgba(2,132,199,0.45)] active:translate-y-0.5 transition-all",
+      "secondary_green": "bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-full px-6 py-3 shadow-[0_4px_14px_rgba(16,185,129,0.3)] active:translate-y-0.5 transition-all",
+      "sunny_accent": "bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold rounded-full px-6 py-3 shadow-[0_4px_14px_rgba(245,158,11,0.35)] active:translate-y-0.5 transition-all",
+      "outline_pill": "border-2 border-sky-200 hover:border-sky-400 bg-white hover:bg-sky-50 text-sky-800 font-semibold rounded-full px-5 py-2.5 transition-all"
     },
-    "curated_reading_cozy": {
-      "url": "https://images.unsplash.com/photo-1603950227760-e609ce8e15b4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwzfHx2aW50YWdlJTIwYm9va3MlMjBzdGFjayUyMGNvZmZlZSUyMGNvenklMjByZWFkaW5nfGVufDB8fHx8MTc5MDI3MjE5NHww&ixlib=rb-4.1.0&q=85",
-      "description": "Open book on soft linen with warm lighting",
-      "usage": "Subscription benefit highlight card"
+    "cards": {
+      "standard": "bg-white rounded-3xl p-6 border-2 border-amber-100/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_14px_35px_rgba(2,132,199,0.08)] hover:-translate-y-1 transition-all duration-300",
+      "interactive_book_card": "bg-white rounded-2xl p-4 border-2 border-slate-100 hover:border-sky-300 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group",
+      "highlight_card": "bg-gradient-to-br from-amber-50 to-orange-50/60 rounded-3xl p-8 border-2 border-amber-200 shadow-sm"
     },
-    "book_stack_aesthetic": {
-      "url": "https://images.unsplash.com/photo-1529590003495-b2646e2718bf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwyfHx2aW50YWdlJTIwYm9va3MlMjBzdGFjayUyMGNvZmZlZSUyMGNvenklMjByZWFkaW5nfGVufDB8fHx8MTc5MDI3MjE5NHww&ixlib=rb-4.1.0&q=85",
-      "description": "Stack of vintage hardcover books on wooden table",
-      "usage": "How It Works 4-book doorstep delivery card"
+    "badges_and_pills": {
+      "age_pill": "bg-sky-100 text-sky-800 font-bold text-xs px-3 py-1 rounded-full border border-sky-200 inline-flex items-center gap-1",
+      "genre_pill": "bg-emerald-100 text-emerald-800 font-bold text-xs px-3 py-1 rounded-full border border-emerald-200",
+      "status_active": "bg-emerald-100 text-emerald-800 font-bold text-xs px-3 py-1 rounded-full border border-emerald-300 flex items-center gap-1.5",
+      "status_due": "bg-amber-100 text-amber-900 font-bold text-xs px-3 py-1 rounded-full border border-amber-300 animate-pulse",
+      "sticker_badge": "bg-yellow-300 text-yellow-950 font-extrabold text-xs px-3.5 py-1.5 rounded-full shadow-sm rotate-[-2deg] hover:rotate-0 transition-transform"
     },
-    "reading_with_coffee": {
-      "url": "https://images.unsplash.com/photo-1474366521946-c3d4b507abf2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHw0fHx2aW50YWdlJTIwYm9va3MlMjBzdGFjayUyMGNvZmZlZSUyMGNvenklMjByZWFkaW5nfGVufDB8fHx8MTc5MDI3MjE5NHww&ixlib=rb-4.1.0&q=85",
-      "description": "Open book beside steaming teacup on saucer",
-      "usage": "Testimonial and community reading section"
-    },
-    "person_reading_tea": {
-      "url": "https://images.unsplash.com/photo-1588243291559-c4a0c36bc2dc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjByZWFkaW5nJTIwYm9vayUyMGNhZmUlMjBsaWJyYXJ5fGVufDB8fHx8MTc5MDI3MjE5NHww&ixlib=rb-4.1.0&q=85",
-      "description": "Hands holding an open novel with a warm beverage",
-      "usage": "Authentication sidebar & reading experience banner"
+    "bundle_dock": {
+      "container": "fixed bottom-5 left-1/2 -translate-x-1/2 z-40 w-[92%] max-w-2xl bg-white/95 backdrop-blur-xl rounded-full p-3 px-5 border-2 border-sky-200 shadow-[0_12px_40px_rgba(2,132,199,0.18)] flex items-center justify-between gap-4",
+      "book_slot_filled": "w-11 h-11 rounded-xl bg-sky-50 border-2 border-sky-400 flex items-center justify-center relative overflow-hidden shadow-sm",
+      "book_slot_empty": "w-11 h-11 rounded-xl border-2 border-dashed border-sky-200 bg-slate-50/80 flex items-center justify-center text-sky-400 text-xs font-bold"
     }
   },
-  "component_structure": {
-    "navbar": "frontend/src/components/Navbar.tsx (Logo SVG mark, Pincode indicator, Catalog link, How it works, Pricing, Cart dock button, User profile)",
-    "footer": "frontend/src/components/Footer.tsx (Literary quotes, Pincode availability directory, FAQ, WhatsApp support link, copyright)",
-    "pincode_checker": "frontend/src/components/PincodeChecker.tsx (Interactive pincode validator for Bangalore/Mumbai/Delhi NCR/Hyderabad/Pune hubs with instant delivery ETA preview)",
-    "book_card": "frontend/src/components/BookCard.tsx (Cover image, genre pill, page count, synopsis popover, 'Add to this month's 4-bundle' CTA with testids)",
-    "bundle_dock": "frontend/src/components/BundleDock.tsx (Floating bottom/side drawer tracking the 4 selected books for the upcoming cycle with 1-click checkout trigger)",
-    "whatsapp_simulator": "frontend/src/components/WhatsAppSimulator.tsx (Interactive live preview of WhatsApp notifications: Order confirmed, Dispatch with OTP, 27-day return reminder, Pickup scheduled)",
-    "subscription_card": "frontend/src/components/SubscriptionPlanCard.tsx (Quarterly ₹1,499 breakdown, 12 books total, free doorstep swap, mocked payment gateway modal)",
-    "dashboard_tracker": "frontend/src/components/DashboardTracker.tsx (Cycle 1/3 progress, 27-day return countdown clock, return & select next 4 books button)"
+  "playful_decorative_motifs": {
+    "wiggly_underline": "Use a subtle yellow/sky wavy SVG underline under key words like 'Unlimited Reading', 'Zero Screen Guilt', 'Happy Kids'",
+    "clouds_and_waves": "Gentle SVG curved wave dividers (`text-[#F0F9FF]` or `text-[#FDFBF7]`) between major sections instead of straight cuts",
+    "stars_and_sparkles": "Small Lucide icon accents (`Sparkles`, `Star`, `BookOpen`, `Smile`, `Heart`) with soft pastel circle badges behind them",
+    "sticker_tags": "Rotate small tags by -2deg or +3deg with bouncy hover transition to feel like cute stickers"
   },
-  "test_attributes": {
-    "pincode_input": "data-testid=\"pincode-input\"",
-    "pincode_check_button": "data-testid=\"pincode-check-button\"",
-    "pincode_status_message": "data-testid=\"pincode-status-message\"",
-    "book_card": "data-testid=\"book-card\"",
-    "add_to_bundle_button": "data-testid=\"add-to-bundle-button\"",
-    "bundle_dock_counter": "data-testid=\"bundle-dock-counter\"",
-    "checkout_button": "data-testid=\"checkout-button\"",
-    "payment_mock_submit": "data-testid=\"payment-mock-submit\"",
-    "whatsapp_alert_item": "data-testid=\"whatsapp-alert-item\"",
-    "dashboard_quota_badge": "data-testid=\"dashboard-quota-badge\"",
-    "dashboard_return_reminder": "data-testid=\"dashboard-return-reminder\"",
-    "swap_books_trigger": "data-testid=\"swap-books-trigger\""
+  "motion_and_interactions": {
+    "hover_lift": "hover:-translate-y-1 hover:shadow-md transition-transform duration-200 ease-out",
+    "button_press": "active:scale-95 transition-transform duration-100",
+    "dock_item_add": "motion.div scale from 0.8 to 1 with spring bounce (stiffness: 400, damping: 25)",
+    "notification_pop": "slide-in from bottom with gentle overshoot",
+    "reduced_motion": "Wrap custom motion in (prefers-reduced-motion: reduce) conditionals and ensure all items remain accessible without motion"
   },
-  "instructions_to_main_agent": [
-    "Theme: Warm Editorial Parchment. Import '@fontsource-variable/lora' and '@fontsource-variable/dm-sans' in frontend/src/index.css.",
-    "Do NOT use generic cold blues or tech purples. Use rich Terracotta (#9A3412), Forest Green (#2B533E), and warm Parchment (#FAF7F2).",
-    "Pincode Serviceability: Seed supported pincodes across major Indian hubs (e.g. 560001 Bangalore Central, 560034 Koramangala, 560038 Indiranagar, 110001 Delhi Connaught Place, 400001 Mumbai Fort, 400050 Bandra, 500081 HITEC City Hyderabad, 411001 Pune Camp) and provide clean validation feedback.",
-    "Subscription Plan: Standardized quarterly plan at ₹1,499 for 3 months (4 books/month = 12 books total). Payment must be mockable with Instant Confirmation.",
-    "WhatsApp Notification System: Implement real-time simulation toast and a dedicated notification log showing the 4 lifecycle messages (Order Placed, Out for Delivery, Day 27 Return Reminder, Pickup Complete).",
-    "Always include testids as outlined in the `test_attributes` map so all interactive flows are verified."
+  "copy_tone_and_examples": {
+    "tone": "Upbeat, warm, storybook-friendly, encouraging for kids, reassuring and crystal clear for Indian parents",
+    "headlines": {
+      "hero": "Fuel Little Imaginations with Fresh Books Every Month 📚✨",
+      "subhero": "Curated 4-book monthly bundles delivered to your doorstep in Mumbai & Bangalore. Swap whenever you're ready — no late fees, zero clutter!",
+      "pricing_tag": "Just ₹1,499 for 3 Months (12 magical storybooks!)",
+      "whatsapp_pitch": "Track delivery & swaps easily on WhatsApp — hassle-free for busy parents",
+      "toys_teaser": "Toy Trunk is Coming Soon! 🧸 Wooden Montessori toys, STEM puzzles & games"
+    }
+  },
+  "page_by_page_retheme_specs": {
+    "Home": {
+      "hero_section": "Light cream background (#FDFBF7) with soft sky blue (#F0F9FF) and sunshine yellow (#FEFCE8) ambient blobs. Left side: Friendly Poppins headline, 3 quick benefit pills ('Curated for Ages 2-12', 'Sanitized & Inspected', 'Instant WhatsApp Support'), and the Pincode checker input in a chunky pill container. Right side: Playful book collage with kid photo cards, floating '4 Books/Mo' badge and star accents.",
+      "pincode_checker": "Chunky white pill box with 2px sky-200 border, map pin icon, 6-digit input, and bright sky-600 'Check Delivery' button with instant green/amber feedback chip.",
+      "how_it_works": "4-step playful story track (1. Pick 4 Books -> 2. Doorstep Delivery -> 3. Read & Enjoy -> 4. Free Swap on WhatsApp) featuring friendly step number stickers (1, 2, 3, 4) in colorful circles.",
+      "value_props": "Grid of 3 soft-tinted cards: Mint green ('Sanitized & Child-Safe'), Sky blue ('₹125/Book vs ₹400 MRP'), Sunshine yellow ('Zero Late Fees & Easy Returns').",
+      "social_proof": "Parent testimonials with 5 gold stars, child's age badge (e.g. 'Mom to Kabir, Age 5'), and friendly quote bubbles."
+    },
+    "Catalog": {
+      "header": "Playful banner with search bar & age filters ('All', 'Ages 2-4 (Board Books)', 'Ages 5-7 (Early Readers)', 'Ages 8-10 (Chapter Books)', 'Ages 11-14 (Young Adults)') styled as chunky toggle pills.",
+      "grid": "3-column responsive grid of books with colorful category badges, reading level indicator, book cover image, and chunky '+ Add to Box' button that turns into green '✓ Added' when selected.",
+      "dock": "Sticky floating bottom dock showing 4 slots with miniature thumbnails, counter ('3/4 Books Selected'), and bright 'Confirm Box' CTA."
+    },
+    "Subscription": {
+      "plan_card": "Sunny gold highlight card for ₹1,499 Quarterly Plan (3 Months), broken down to '₹499/month · 12 books total'. Includes bullet points with green checkmarks.",
+      "checkout_steps": "Friendly step-by-step accordion: 1. Delivery Address & Pincode -> 2. WhatsApp Number for Updates -> 3. Payment Option (Mock Razorpay / UPI / Card / Cash on Delivery).",
+      "trust_badges": "100% money-back guarantee seal, sanitized book badge, parent-approved lock."
+    },
+    "Dashboard": {
+      "welcome_banner": "Sunny sky card: 'Welcome back, [Parent Name]! Kabir's Reading Box is Active 📖'",
+      "current_books": "4-card row of active books with days remaining countdown badge ('📅 Return/Swap in 12 days') and one-click 'Request Return & Swap' chunky button.",
+      "whatsapp_log": "Friendly WhatsApp mock chat card with green header, timestamped status updates ('Your 4 books were dispatched!', 'Swap reminder sent to +91 98765 43210').",
+      "reading_stats": "Playful milestone badges ('12 Books Read this Quarter', 'Super Explorer Badge')."
+    },
+    "Auth_Pages": {
+      "Login_Signup": "Two-column split card on soft cream page. Left column: Pastel illustrated reading perks panel with cheerful badges. Right column: White card with rounded-2xl inputs, prominent labels, show/hide password toggle, and chunky sky-600 submit button.",
+      "ForgotPassword_ResetPassword": "Centered friendly card with pastel lock/key icon in a soft circle, clear explanation, and instant feedback alerts."
+    },
+    "Toys_Teaser": {
+      "banner": "Lavender/Mint pastel banner teasing 'RentARead Toys Trunk' with waitlist email signup and chunky 'Join Waitlist' button."
+    }
+  },
+  "accessibility_and_wcag": {
+    "contrast_guarantee": "All text elements meet WCAG AA (>= 4.5:1 ratio). Sky blue buttons use deep saturated #0284C7 or #0369A1 on white text (ratio 4.8:1+). Dark slate #0F172A and #1E293B are used for all headers and body text against #FDFBF7 and white cards (ratio 12:1+).",
+    "focus_states": "All inputs and buttons feature prominent focus ring `focus:ring-4 focus:ring-sky-200 focus:outline-none`.",
+    "testing_attributes": "All buttons, inputs, links, badges, and counters MUST include `data-testid` attributes (e.g., `data-testid=\"pincode-input\"`, `data-testid=\"add-to-bundle-button\"`, `data-testid=\"bundle-dock\"`)."
+  },
+  "image_urls": [
+    {
+      "category": "hero_and_reading_moments",
+      "url": "https://images.unsplash.com/photo-1610500796385-3ffc1ae2f046?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHw0fHxjaGlsZHJlbiUyMHJlYWRpbmclMjBjb2xvcmZ1bCUyMGJvb2tzfGVufDB8fHx8MTc5MDQ2OTM1NXww&ixlib=rb-4.1.0&q=85",
+      "description": "Happy children engaged in reading colorful storybooks together",
+      "placement": "Home hero right illustration card and how-it-works section"
+    },
+    {
+      "category": "toddler_reading",
+      "url": "https://images.unsplash.com/flagged/photo-1551887373-6edba6dacbb1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMHJlYWRpbmclMjBjb2xvcmZ1bCUyMGJvb2tzfGVufDB8fHx8MTc5MDQ2OTM1NXww&ixlib=rb-4.1.0&q=85",
+      "description": "Young child happily exploring picture book pages",
+      "placement": "Early reader age category and parent testimonials"
+    },
+    {
+      "category": "cozy_storytime",
+      "url": "https://images.unsplash.com/photo-1532789339108-2ebc484efbf1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHwzfHxjaGlsZHJlbiUyMHJlYWRpbmclMjBjb2xvcmZ1bCUyMGJvb2tzfGVufDB8fHx8MTc5MDQ2OTM1NXww&ixlib=rb-4.1.0&q=85",
+      "description": "Children reading together cozy on a couch",
+      "placement": "Subscription benefits and parent trust highlight"
+    }
   ],
-  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
-    "Avoid AI slop: Use asymmetrical editorial layouts, distinct font pairings, and high-contrast readable surfaces.",
-    "Never apply universal transitions like transition: all. Target specific properties (opacity, transform, background-color).",
-    "Never center align the entire app container or rely on generic centered hero layouts.",
-    "Use generous padding (p-6 to p-12) and avoid cramped text-to-border containers.",
-    "Use Sonner for toasts placed at bottom-right."
+  "instructions_to_main_agent": [
+    "1. Replace font imports in `frontend/src/index.css` with `@import \"@fontsource/poppins/400.css\"; @import \"@fontsource/poppins/600.css\"; @import \"@fontsource/poppins/700.css\"; @import \"@fontsource-variable/dm-sans\";` and update `--font-heading`, `--font-display`, `--font-sans` variables.",
+    "2. Update the `:root` theme variables in `frontend/src/index.css` with the pastel storybook palette tokens (background: #FDFBF7, primary: #0284C7, secondary: #F0F9FF, accent: #16A34A, ring: #0284C7, radius: 1rem).",
+    "3. Replace the editorial terracotta/serif elements across Home, Catalog, Subscription, Dashboard, Auth, and ToysTeaser with rounded-3xl cards, chunky pill buttons, pastel category pills, and Lucide icons.",
+    "4. Ensure the light theme remains bright and cheerful without dark photo overlays, keeping full parent-trustworthy readability.",
+    "5. Keep all backend endpoints, Pydantic models, data stores, and React router URLs identical so existing tests continue passing seamlessly.",
+    "6. Verify every interactive component has explicit `data-testid` attributes."
   ]
 }

@@ -58,19 +58,19 @@ export default function Dashboard() {
   const cycle = sub?.current_cycle ?? 0;
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2]">
+    <div className="min-h-screen bg-[#FDFBF7]">
       <Navbar />
 
       <section className="mx-auto max-w-7xl px-4 pb-24 pt-28 sm:px-6 lg:px-8" data-testid="dashboard">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}>
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9A3412]">Your reading sanctuary</p>
-          <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-[#1C1917] sm:text-4xl">
+          <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-[#0284C7]">Your family's reading corner</p>
+          <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-[#0F172A] sm:text-4xl">
             {user ? `Good to see you, ${user.name.split(" ")[0]}` : "Your shelf"}
           </h1>
           {sub && (
             <div
               data-testid="dashboard-quota-badge"
-              className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#FEF3C7] px-4 py-2 text-sm font-semibold text-[#78350F]"
+              className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#FEF9C3] px-4 py-2 text-sm font-semibold text-[#78350F]"
             >
               {active ? `Month ${Math.min(cycle + (currentRental ? 0 : 1), 3)} of 3` : "Plan complete"} · {sub.books_rented_total} of 12 books rented
             </div>
@@ -78,15 +78,15 @@ export default function Dashboard() {
         </motion.div>
 
         {!sub ? (
-          <div className="mt-12 rounded-2xl border border-[#E7DFD5] bg-white p-12 text-center" data-testid="dashboard-no-plan">
-            <p className="font-display text-2xl font-semibold text-[#1C1917]">Your shelf is empty — for now</p>
-            <p className="mx-auto mt-2 max-w-md text-sm text-[#57534E]">
+          <div className="mt-12 rounded-2xl border border-[#F1E8DC] bg-white p-12 text-center" data-testid="dashboard-no-plan">
+            <p className="font-display text-2xl font-semibold text-[#0F172A]">Your shelf is empty — for now</p>
+            <p className="mx-auto mt-2 max-w-md text-sm text-[#64748B]">
               Activate the Quarterly Reading Plan and your first four books could be at your door in 48 hours.
             </p>
             <button
               data-testid="dashboard-subscribe-cta"
               onClick={() => navigate("/subscription")}
-              className="mt-6 rounded-full bg-[#9A3412] px-8 py-3.5 text-sm font-semibold text-[#FAF7F2] transition-colors hover:bg-[#7C2D12]"
+              className="mt-6 rounded-full bg-[#0284C7] px-8 py-3.5 text-sm font-semibold text-[#FDFBF7] transition-colors hover:bg-[#0369A1]"
             >
               See the plan — ₹1,499
             </button>
@@ -99,70 +99,70 @@ export default function Dashboard() {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
-                  className="rounded-2xl border border-[#E7DFD5] bg-white p-8"
+                  className="rounded-2xl border border-[#F1E8DC] bg-white p-8"
                   data-testid="current-rental-card"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-4">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#2B533E]">
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#16A34A]">
                         Month {currentRental.cycle} — currently with you
                       </p>
-                      <p className="mt-2 font-display text-4xl font-semibold text-[#1C1917]">
+                      <p className="mt-2 font-display text-4xl font-semibold text-[#0F172A]">
                         {daysLeft !== null && daysLeft >= 0 ? daysLeft : 0}
-                        <span className="ml-2 text-base font-normal text-[#57534E]">days left · due {format(new Date(currentRental.due_date), "d MMM yyyy")}</span>
+                        <span className="ml-2 text-base font-normal text-[#64748B]">days left · due {format(new Date(currentRental.due_date), "d MMM yyyy")}</span>
                       </p>
                     </div>
                     <button
                       data-testid="swap-books-trigger"
                       onClick={() => returnMutation.mutate(currentRental.id)}
                       disabled={returnMutation.isPending}
-                      className="rounded-full bg-[#1C1917] px-6 py-3 text-sm font-semibold text-[#FAF7F2] transition-colors hover:bg-[#9A3412] disabled:opacity-50"
+                      className="rounded-full bg-[#0F172A] px-6 py-3 text-sm font-semibold text-[#FDFBF7] transition-colors hover:bg-[#0284C7] disabled:opacity-50"
                     >
                       {currentRental.cycle >= 3 ? "Return final set" : "Return & unlock next 4"}
                     </button>
                   </div>
 
                   {daysLeft !== null && daysLeft <= 3 && (
-                    <p data-testid="dashboard-return-reminder" className="mt-5 rounded-xl bg-[#FEF3C7] px-5 py-3.5 text-sm font-medium text-[#78350F]">
+                    <p data-testid="dashboard-return-reminder" className="mt-5 rounded-xl bg-[#FEF9C3] px-5 py-3.5 text-sm font-medium text-[#78350F]">
                       Pickup is coming up — keep the four books together by the door. We messaged you on WhatsApp too.
                     </p>
                   )}
 
                   <div className="mt-7 grid grid-cols-2 gap-4 sm:grid-cols-4">
                     {currentRental.books.map((b) => (
-                      <div key={b.id} className="overflow-hidden rounded-xl border border-[#E7DFD5]">
+                      <div key={b.id} className="overflow-hidden rounded-xl border border-[#F1E8DC]">
                         <img src={b.cover_url} alt={b.title} className="aspect-[2/3] w-full object-cover" />
-                        <p className="truncate px-2.5 py-2 text-xs font-semibold text-[#1C1917]">{b.title}</p>
+                        <p className="truncate px-2.5 py-2 text-xs font-semibold text-[#0F172A]">{b.title}</p>
                       </div>
                     ))}
                   </div>
                 </motion.div>
               ) : canOrderNext ? (
-                <div className="rounded-2xl border border-dashed border-[#9A3412]/40 bg-[#F5EFEB] p-12 text-center" data-testid="next-cycle-cta">
-                  <p className="font-display text-2xl font-semibold text-[#1C1917]">
+                <div className="rounded-2xl border border-dashed border-[#0284C7]/40 bg-[#F0F9FF] p-12 text-center" data-testid="next-cycle-cta">
+                  <p className="font-display text-2xl font-semibold text-[#0F172A]">
                     Month {cycle + 1} is unlocked
                   </p>
-                  <p className="mx-auto mt-2 max-w-md text-sm text-[#57534E]">
+                  <p className="mx-auto mt-2 max-w-md text-sm text-[#64748B]">
                     Four new books, chosen by you, delivered within 48 hours.
                   </p>
                   <button
                     data-testid="choose-books-button"
                     onClick={() => navigate("/catalog")}
-                    className="mt-6 rounded-full bg-[#9A3412] px-8 py-3.5 text-sm font-semibold text-[#FAF7F2] transition-colors hover:bg-[#7C2D12]"
+                    className="mt-6 rounded-full bg-[#0284C7] px-8 py-3.5 text-sm font-semibold text-[#FDFBF7] transition-colors hover:bg-[#0369A1]"
                   >
                     Choose your 4 books
                   </button>
                 </div>
               ) : sub.status === "completed" ? (
-                <div className="rounded-2xl border border-[#E7DFD5] bg-white p-12 text-center" data-testid="plan-complete-card">
-                  <p className="font-display text-2xl font-semibold text-[#1C1917]">Quarter complete — 12 books read</p>
-                  <p className="mx-auto mt-2 max-w-md text-sm text-[#57534E]">
+                <div className="rounded-2xl border border-[#F1E8DC] bg-white p-12 text-center" data-testid="plan-complete-card">
+                  <p className="font-display text-2xl font-semibold text-[#0F172A]">Quarter complete — 12 books read</p>
+                  <p className="mx-auto mt-2 max-w-md text-sm text-[#64748B]">
                     That's a shelf's worth of stories. Renew to start a fresh quarter.
                   </p>
                   <button
                     data-testid="renew-plan-button"
                     onClick={() => navigate("/subscription")}
-                    className="mt-6 rounded-full bg-[#9A3412] px-8 py-3.5 text-sm font-semibold text-[#FAF7F2] transition-colors hover:bg-[#7C2D12]"
+                    className="mt-6 rounded-full bg-[#0284C7] px-8 py-3.5 text-sm font-semibold text-[#FDFBF7] transition-colors hover:bg-[#0369A1]"
                   >
                     Renew for another 3 months
                   </button>
@@ -170,18 +170,18 @@ export default function Dashboard() {
               ) : null}
 
               {rentals && rentals.length > 0 && (
-                <div className="rounded-2xl border border-[#E7DFD5] bg-white p-8" data-testid="rental-history">
-                  <h2 className="font-heading text-lg font-semibold text-[#1C1917]">Your reading trail</h2>
-                  <ul className="mt-5 divide-y divide-[#E7DFD5]">
+                <div className="rounded-2xl border border-[#F1E8DC] bg-white p-8" data-testid="rental-history">
+                  <h2 className="font-heading text-lg font-semibold text-[#0F172A]">Your reading trail</h2>
+                  <ul className="mt-5 divide-y divide-[#F1E8DC]">
                     {rentals.map((r) => (
                       <li key={r.id} className="flex flex-wrap items-center justify-between gap-2 py-4 text-sm">
                         <div>
-                          <p className="font-semibold text-[#1C1917]">Month {r.cycle} bundle</p>
-                          <p className="mt-0.5 text-xs text-[#57534E]">{r.books.map((b) => b.title).join(" · ")}</p>
+                          <p className="font-semibold text-[#0F172A]">Month {r.cycle} bundle</p>
+                          <p className="mt-0.5 text-xs text-[#64748B]">{r.books.map((b) => b.title).join(" · ")}</p>
                         </div>
                         <span
                           className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                            r.status === "delivered" ? "bg-[#2B533E]/10 text-[#2B533E]" : "bg-[#F5EFEB] text-[#57534E]"
+                            r.status === "delivered" ? "bg-[#16A34A]/10 text-[#16A34A]" : "bg-[#F0F9FF] text-[#64748B]"
                           }`}
                         >
                           {r.status === "delivered" ? "With you" : `Returned ${r.returned_at ? format(new Date(r.returned_at), "d MMM") : ""}`}
@@ -194,29 +194,29 @@ export default function Dashboard() {
             </div>
 
             <div className="space-y-8 lg:col-span-4">
-              <div className="rounded-2xl bg-[#1C1917] p-8 text-[#FAF7F2]" data-testid="plan-timeline">
+              <div className="rounded-2xl bg-[#0F172A] p-8 text-[#FDFBF7]" data-testid="plan-timeline">
                 <h2 className="font-heading text-base font-semibold">Plan timeline</h2>
                 <div className="mt-6 space-y-0">
                   {[1, 2, 3].map((m) => (
                     <div key={m} className="relative pb-6 pl-7 last:pb-0">
                       <span
                         className={`absolute left-0 top-1 h-3.5 w-3.5 rounded-full border-2 ${
-                          m <= cycle ? "border-[#FDBA74] bg-[#FDBA74]" : m === cycle + 1 && active ? "border-[#FDBA74] bg-transparent" : "border-[#FAF7F2]/25 bg-transparent"
+                          m <= cycle ? "border-[#FDE047] bg-[#FDE047]" : m === cycle + 1 && active ? "border-[#FDE047] bg-transparent" : "border-[#FDFBF7]/25 bg-transparent"
                         }`}
                       />
                       <p className="text-sm font-semibold">Month {m}</p>
-                      <p className="text-xs text-[#D6CEBF]">
+                      <p className="text-xs text-[#CBD5E1]">
                         {m <= cycle ? "4 books delivered" : active && m === cycle + 1 ? "Up next" : "Locked"}
                       </p>
                     </div>
                   ))}
                 </div>
-                <p className="mt-6 border-t border-[#FAF7F2]/10 pt-4 text-xs text-[#A8A29E]">
+                <p className="mt-6 border-t border-[#FDFBF7]/10 pt-4 text-xs text-[#94A3B8]">
                   Plan ends {format(new Date(sub.end_date), "d MMM yyyy")}
                 </p>
               </div>
 
-              <div className="overflow-hidden rounded-2xl border border-[#E7DFD5] bg-white" data-testid="whatsapp-log">
+              <div className="overflow-hidden rounded-2xl border border-[#F1E8DC] bg-white" data-testid="whatsapp-log">
                 <div className="flex items-center gap-2 bg-[#075E54] px-5 py-3.5 text-white">
                   <MessageCircle className="h-4 w-4 text-[#25D366]" />
                   <p className="text-sm font-semibold">WhatsApp updates</p>
@@ -231,13 +231,13 @@ export default function Dashboard() {
                           <p className="flex items-center gap-1.5 text-xs font-bold text-[#075E54]">
                             <Icon className="h-3.5 w-3.5" /> {n.title}
                           </p>
-                          <p className="mt-1 text-xs leading-relaxed text-[#1C1917]">{n.body}</p>
-                          <p className="mt-1.5 text-right text-[10px] text-[#57534E]">{format(new Date(n.created_at), "d MMM, h:mm a")} ✓✓</p>
+                          <p className="mt-1 text-xs leading-relaxed text-[#0F172A]">{n.body}</p>
+                          <p className="mt-1.5 text-right text-[10px] text-[#64748B]">{format(new Date(n.created_at), "d MMM, h:mm a")} ✓✓</p>
                         </li>
                       );
                     })
                   ) : (
-                    <li className="rounded-xl bg-white/70 px-4 py-6 text-center text-xs text-[#57534E]">
+                    <li className="rounded-xl bg-white/70 px-4 py-6 text-center text-xs text-[#64748B]">
                       Order updates, delivery alerts and return reminders land here — and on your WhatsApp.
                     </li>
                   )}
