@@ -12,6 +12,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { BadgesCard } from "@/components/BadgesCard";
+import { ChildrenCard } from "@/components/ChildrenCard";
 
 const fetchSubscription = () => apiGet<Subscription | null>("/subscriptions/me");
 const fetchRentals = () => apiGet<Rental[]>("/rentals/me");
@@ -217,6 +218,8 @@ export default function Dashboard() {
                   Plan ends {format(new Date(sub.end_date), "d MMM yyyy")}
                 </p>
               </div>
+
+              <ChildrenCard />
 
               <BadgesCard />
 

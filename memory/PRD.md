@@ -46,6 +46,12 @@ FR-01 pincode access control · FR-02 3-month subscription mgmt · FR-03 invento
 - New hero: mesh-gradient canvas, gradient headline accent, glass "this month's box" preview card with parallax, rating chip; dark glass bundle dock; dark genre chips on book cards; modern rounded-xl buttons throughout
 - Family-friendly copy retained; kids' catalogue, badges, waitlist, auth, and all flows unchanged; typecheck clean
 
+## Implemented (28 Sep 2026 — child profiles)
+- Parents manage up to 6 reader profiles (name + age band) from a "Your little readers" dashboard card: add, list with color-coded initials, delete (PATCH endpoint also available)
+- Catalog "Reading for" switcher: picking a child snaps the catalogue to their age band and persists the choice; orders placed while a child is selected are attributed to them (rentals.child_id, validated server-side)
+- Badges compute per child: GET /api/badges/me?child_id= filters rental history; dashboard badges card has a Whole family / per-child scope selector
+- Verified live: add child, invalid age rejected (400), order attributed to Kabir (cycle 2), per-child vs family badges diverge correctly, fake child_id rejected (404), Kabir's "Right on Time" earned on return
+
 ## Backlog
 - P0: Real WhatsApp Business API; real payment gateway (Stripe/Razorpay)
 - P1: Scheduled day-27/29 reminder worker; pickup scheduling UI; address management

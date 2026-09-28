@@ -48,6 +48,7 @@ export interface Rental {
   id: string;
   user_id: string;
   subscription_id: string;
+  child_id?: string | null;
   cycle: number;
   book_ids: string[];
   books: Book[];
@@ -71,4 +72,12 @@ export interface Badge {
   name: string;
   description: string;
   earned: boolean;
+}
+
+export interface Child {
+  id: string;
+  user_id: string;
+  name: string;
+  age_group: string;
+  created_at: string;
 }

@@ -180,12 +180,14 @@ class Subscription(BaseModel):
 
 class RentalCreate(BaseModel):
     book_ids: list[str]
+    child_id: str | None = None
 
 
 class Rental(BaseModel):
     id: str
     user_id: str
     subscription_id: str
+    child_id: str | None = None
     cycle: int
     book_ids: list[str]
     books: list[Book] = []
@@ -404,6 +406,10 @@ async def create_rental(body: RentalCreate, user: dict = Depends(get_current_use
     active = await db.rentals.find_one({"user_id": user["id"], "status": "delivered"})
     if active:
         raise HTTPException(409, "Return your current set before ordering the next one")
+    if body.child_id:
+        child = await db.children.find_one({"id": body.child_id, "user_id": user["id"]})
+        if not child:
+            raise HTTPException(404, "Child profile not found")
     books = []
     for bid in body.book_ids:
         book = await db.books.find_one({"id": bid})
@@ -416,7 +422,7 @@ async def create_rental(body: RentalCreate, user: dict = Depends(get_current_use
     cycle = sub["current_cycle"] + 1
     rental = {
         "id": str(uuid.uuid4()), "user_id": user["id"], "subscription_id": sub["id"],
-        "cycle": cycle, "book_ids": body.book_ids, "status": "delivered",
+        "child_id": body.child_id, "cycle": cycle, "book_ids": body.book_ids, "status": "delivered",
         "ordered_at": now, "due_date": now + timedelta(days=CYCLE_DAYS), "returned_at": None,
     }
     await db.rentals.insert_one(rental)
@@ -648,6 +654,72 @@ async def reset_password(body: ResetPasswordRequest):
     return {"ok": True, "message": "Password updated"}
 
 
+# ---------- child profiles ----------
+
+CHILD_AGE_GROUPS = {"2-4", "5-7", "8-10", "11-14"}
+
+
+class ChildCreate(BaseModel):
+    name: str = Field(min_length=1, max_length=40)
+    age_group: str
+
+
+class ChildUpdate(BaseModel):
+    name: str | None = Field(default=None, min_length=1, max_length=40)
+    age_group: str | None = None
+
+
+class Child(BaseModel):
+    id: str
+    user_id: str
+    name: str
+    age_group: str
+    created_at: datetime
+
+
+@api_router.get("/children/me", response_model=list[Child])
+async def my_children(user: dict = Depends(get_current_user)):
+    docs = await db.children.find({"user_id": user["id"]}, {"_id": 0}).sort("created_at", 1).to_list(20)
+    return [Child(**d) for d in docs]
+
+
+@api_router.post("/children", response_model=Child)
+async def create_child(body: ChildCreate, user: dict = Depends(get_current_user)):
+    if body.age_group not in CHILD_AGE_GROUPS:
+        raise HTTPException(400, "Pick a valid age group")
+    if await db.children.count_documents({"user_id": user["id"]}) >= 6:
+        raise HTTPException(400, "Up to 6 reader profiles per family")
+    child = {
+        "id": str(uuid.uuid4()), "user_id": user["id"],
+        "name": body.name.strip(), "age_group": body.age_group, "created_at": utcnow(),
+    }
+    await db.children.insert_one(child)
+    child.pop("_id", None)
+    return Child(**child)
+
+
+@api_router.patch("/children/{child_id}", response_model=Child)
+async def update_child(child_id: str, body: ChildUpdate, user: dict = Depends(get_current_user)):
+    updates = {k: v for k, v in body.model_dump().items() if v is not None}
+    if "age_group" in updates and updates["age_group"] not in CHILD_AGE_GROUPS:
+        raise HTTPException(400, "Pick a valid age group")
+    if not updates:
+        raise HTTPException(400, "Nothing to update")
+    res = await db.children.update_one({"id": child_id, "user_id": user["id"]}, {"$set": updates})
+    if res.matched_count == 0:
+        raise HTTPException(404, "Child profile not found")
+    doc = await db.children.find_one({"id": child_id}, {"_id": 0})
+    return Child(**doc)
+
+
+@api_router.delete("/children/{child_id}")
+async def delete_child(child_id: str, user: dict = Depends(get_current_user)):
+    res = await db.children.delete_one({"id": child_id, "user_id": user["id"]})
+    if res.deleted_count == 0:
+        raise HTTPException(404, "Child profile not found")
+    return {"ok": True}
+
+
 # ---------- reading badges ----------
 
 class Badge(BaseModel):
@@ -667,8 +739,11 @@ BADGE_DEFS = [
 
 
 @api_router.get("/badges/me", response_model=list[Badge])
-async def my_badges(user: dict = Depends(get_current_user)):
-    rentals = await db.rentals.find({"user_id": user["id"]}).to_list(50)
+async def my_badges(child_id: str | None = None, user: dict = Depends(get_current_user)):
+    rental_query: dict = {"user_id": user["id"]}
+    if child_id:
+        rental_query["child_id"] = child_id
+    rentals = await db.rentals.find(rental_query).to_list(50)
     total_books = sum(len(r["book_ids"]) for r in rentals)
     returned_any = any(r["status"] == "returned" for r in rentals)
     genres: set[str] = set()

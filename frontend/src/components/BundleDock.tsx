@@ -13,7 +13,7 @@ import { useBundle } from "@/lib/bundle";
 // Floating pill tracking this month's 4-book bundle. Owns the whole checkout action
 // so it works from any page: auth -> subscription -> place rental order.
 export function BundleDock() {
-  const { ids, clear } = useBundle();
+  const { ids, clear, childId } = useBundle();
   const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -21,7 +21,7 @@ export function BundleDock() {
   const [busy, setBusy] = useState(false);
 
   const order = useMutation({
-    mutationFn: () => apiPost<Rental>("/rentals", { book_ids: ids }),
+    mutationFn: () => apiPost<Rental>("/rentals", { book_ids: ids, child_id: childId }),
     onSuccess: (rental) => {
       clear();
       toast.success(`Month ${rental.cycle} bundle confirmed — check WhatsApp for updates.`);

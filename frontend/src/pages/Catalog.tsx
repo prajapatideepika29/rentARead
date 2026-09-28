@@ -3,10 +3,12 @@ import { useQuery } from "@tanstack/react-query";
 import { motion } from "motion/react";
 import { LibraryBig, Search } from "lucide-react";
 import { apiGet } from "@/lib/api";
+import { useBundle } from "@/lib/bundle";
 import type { Book } from "@/lib/types";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { BookCard } from "@/components/BookCard";
+import { ChildSwitcher } from "@/components/ChildSwitcher";
 
 const GENRES = [
   "All",
@@ -38,7 +40,7 @@ const fetchBooks = () => apiGet<Book[]>("/books");
 export default function Catalog() {
   const { data: books, isError } = useQuery({ queryKey: ["books"], queryFn: fetchBooks, retry: false });
   const [genre, setGenre] = useState("All");
-  const [ageGroup, setAgeGroup] = useState("all");
+  const { ageGroup, setAgeGroup } = useBundle();
   const [q, setQ] = useState("");
 
   const filtered = useMemo(() => {
@@ -75,7 +77,9 @@ export default function Catalog() {
           </p>
         </motion.div>
 
-        <div className="mt-10 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+        <div className="mt-10 flex flex-col gap-5" >
+          <ChildSwitcher />
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-3">
             <div className="flex flex-wrap gap-2" data-testid="age-filters">
               {AGE_GROUPS.map((a) => (
@@ -119,6 +123,7 @@ export default function Catalog() {
               placeholder="Search title or author"
               className="w-full bg-transparent text-sm text-[#0F172A] outline-none placeholder:text-[#94A3B8]"
             />
+          </div>
           </div>
         </div>
 

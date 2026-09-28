@@ -40,6 +40,10 @@ INDEXES: dict[str, list[IndexModel]] = {
         IndexModel([("user_id", ASCENDING), ("created_at", DESCENDING)], name="user_created"),
     ],
     "login_attempts": [IndexModel([("identifier", ASCENDING)], name="identifier")],
+    "children": [
+        IndexModel([("id", ASCENDING)], name="id", unique=True),
+        IndexModel([("user_id", ASCENDING)], name="user"),
+    ],
     "password_reset_tokens": [
         IndexModel([("token", ASCENDING)], name="token", unique=True),
         IndexModel([("expires_at", ASCENDING)], name="expires_at", expireAfterSeconds=0),

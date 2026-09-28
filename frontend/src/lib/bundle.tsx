@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 
 const MAX_BUNDLE = 4;
 const STORAGE_KEY = "rentaread-bundle";
+const CHILD_KEY = "rentaread-child";
 
 interface BundleContextValue {
   ids: string[];
@@ -10,6 +11,10 @@ interface BundleContextValue {
   clear: () => void;
   has: (id: string) => boolean;
   full: boolean;
+  childId: string | null;
+  setChildId: (id: string | null) => void;
+  ageGroup: string;
+  setAgeGroup: (group: string) => void;
 }
 
 const BundleContext = createContext<BundleContextValue | null>(null);
@@ -23,10 +28,17 @@ export function BundleProvider({ children }: { children: ReactNode }) {
       return [];
     }
   });
+  const [childId, setChildId] = useState<string | null>(() => localStorage.getItem(CHILD_KEY));
+  const [ageGroup, setAgeGroup] = useState("all");
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
   }, [ids]);
+
+  useEffect(() => {
+    if (childId) localStorage.setItem(CHILD_KEY, childId);
+    else localStorage.removeItem(CHILD_KEY);
+  }, [childId]);
 
   const value = useMemo<BundleContextValue>(
     () => ({
@@ -38,8 +50,12 @@ export function BundleProvider({ children }: { children: ReactNode }) {
       clear: () => setIds([]),
       has: (id: string) => ids.includes(id),
       full: ids.length >= MAX_BUNDLE,
+      childId,
+      setChildId,
+      ageGroup,
+      setAgeGroup,
     }),
-    [ids],
+    [ids, childId, ageGroup],
   );
 
   return <BundleContext.Provider value={value}>{children}</BundleContext.Provider>;
