@@ -37,7 +37,7 @@ export function ToysTeaser() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#0284C7]">One membership, growing shelves</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#2563EB]">One membership, growing shelves</p>
         <h2 className="mt-3 max-w-xl font-display text-3xl font-semibold tracking-tight text-[#0F172A] sm:text-4xl">
           Books today. Toys tomorrow.
         </h2>
@@ -49,20 +49,20 @@ export function ToysTeaser() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col rounded-2xl bg-[#0284C7] p-10 text-[#FDFBF7]"
+          className="flex flex-col rounded-2xl bg-[#2563EB] p-10 text-[#F8FAFC]"
         >
           <div className="flex items-center justify-between">
             <BookOpen className="h-8 w-8" />
-            <span className="rounded-full bg-[#FDFBF7]/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Live now</span>
+            <span className="rounded-full bg-[#F8FAFC]/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Live now</span>
           </div>
           <h3 className="mt-8 font-display text-2xl font-semibold">The book library</h3>
-          <p className="mt-2 max-w-sm text-sm leading-relaxed text-[#FDFBF7]/85">
+          <p className="mt-2 max-w-sm text-sm leading-relaxed text-[#F8FAFC]/85">
             4 books a month, 12 a quarter, free doorstep swaps. This is the shelf you know and love.
           </p>
           <button
             data-testid="books-collection-cta"
             onClick={() => navigate("/catalog")}
-            className="group mt-8 flex w-fit items-center gap-2 rounded-full bg-[#FDFBF7] px-6 py-3 text-sm font-semibold text-[#0284C7] transition-colors hover:bg-white"
+            className="group mt-8 flex w-fit items-center gap-2 rounded-full bg-[#F8FAFC] px-6 py-3 text-sm font-semibold text-[#2563EB] transition-colors hover:bg-white"
           >
             Browse books
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -74,21 +74,21 @@ export function ToysTeaser() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex flex-col rounded-2xl bg-[#16A34A] p-10 text-[#FDFBF7]"
+          className="flex flex-col rounded-2xl bg-[#16A34A] p-10 text-[#F8FAFC]"
         >
           <div className="flex items-center justify-between">
             <Blocks className="h-8 w-8" />
-            <span className="rounded-full bg-[#FDFBF7]/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Coming soon</span>
+            <span className="rounded-full bg-[#F8FAFC]/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide">Coming soon</span>
           </div>
           <h3 className="mt-8 font-display text-2xl font-bold">The Toy Trunk</h3>
-          <p className="mt-2 max-w-sm text-sm leading-relaxed text-[#FDFBF7]/85">
+          <p className="mt-2 max-w-sm text-sm leading-relaxed text-[#F8FAFC]/85">
             Same idea, smaller hands: wooden Montessori toys, STEM puzzles and games — four a month,
             swapped when they're outgrown. Leave your details and you'll be first in line when the
             Toy Trunk reaches your pincode.
           </p>
 
           {joined ? (
-            <p data-testid="toys-waitlist-status" className="mt-8 flex items-center gap-2 rounded-xl bg-[#FDFBF7]/10 px-5 py-4 text-sm font-medium">
+            <p data-testid="toys-waitlist-status" className="mt-8 flex items-center gap-2 rounded-xl bg-[#F8FAFC]/10 px-5 py-4 text-sm font-medium">
               <CheckCircle2 className="h-5 w-5 shrink-0 text-[#86EFAC]" />
               You're on the list — we'll message you the day toys launch near {pincode}.
             </p>
@@ -101,7 +101,7 @@ export function ToysTeaser() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email"
-                className="w-full rounded-full border border-[#FDFBF7]/25 bg-[#FDFBF7]/10 px-5 py-3 text-sm text-[#FDFBF7] outline-none placeholder:text-[#FDFBF7]/50 focus:border-[#FDFBF7]/60"
+                className="w-full rounded-full border border-[#F8FAFC]/25 bg-[#F8FAFC]/10 px-5 py-3 text-sm text-[#F8FAFC] outline-none placeholder:text-[#F8FAFC]/50 focus:border-[#F8FAFC]/60"
               />
               <div className="flex gap-3">
                 <input
@@ -111,13 +111,13 @@ export function ToysTeaser() {
                   onChange={(e) => setPincode(e.target.value.replace(/\D/g, "").slice(0, 6))}
                   placeholder="Pincode"
                   inputMode="numeric"
-                  className="w-full rounded-full border border-[#FDFBF7]/25 bg-[#FDFBF7]/10 px-5 py-3 text-sm text-[#FDFBF7] outline-none placeholder:text-[#FDFBF7]/50 focus:border-[#FDFBF7]/60"
+                  className="w-full rounded-full border border-[#F8FAFC]/25 bg-[#F8FAFC]/10 px-5 py-3 text-sm text-[#F8FAFC] outline-none placeholder:text-[#F8FAFC]/50 focus:border-[#F8FAFC]/60"
                 />
                 <button
                   data-testid="toys-waitlist-submit-button"
                   type="submit"
                   disabled={busy || pincode.length !== 6}
-                  className="flex shrink-0 items-center gap-2 rounded-full bg-[#FDFBF7] px-6 py-3 text-sm font-semibold text-[#16A34A] transition-colors hover:bg-white disabled:opacity-40"
+                  className="flex shrink-0 items-center gap-2 rounded-full bg-[#F8FAFC] px-6 py-3 text-sm font-semibold text-[#16A34A] transition-colors hover:bg-white disabled:opacity-40"
                 >
                   {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : "Notify me"}
                 </button>

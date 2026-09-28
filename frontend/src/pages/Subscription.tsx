@@ -58,7 +58,7 @@ export default function Subscription() {
   const active = sub?.status === "active";
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7]">
+    <div className="min-h-screen bg-[#F8FAFC]">
       <Navbar />
 
       <section className="mx-auto max-w-7xl px-4 pb-24 pt-28 sm:px-6 lg:px-8">
@@ -68,7 +68,7 @@ export default function Subscription() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#0284C7]">Membership</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#2563EB]">Membership</p>
             <h1 className="mt-3 font-display text-3xl font-semibold tracking-tight text-[#0F172A] sm:text-4xl">
               The Quarterly Reading Plan
             </h1>
@@ -77,11 +77,11 @@ export default function Subscription() {
               from your doorstep, with WhatsApp keeping the dates straight so you don't have to.
             </p>
 
-            <ol className="mt-10 space-y-0 border-l-2 border-[#F1E8DC]">
+            <ol className="mt-10 space-y-0 border-l-2 border-[#E2E8F0]">
               {TIMELINE.map(([title, body], i) => (
                 <li key={title} className="relative pb-8 pl-8 last:pb-0">
-                  <span className="absolute -left-[9px] top-1 flex h-4 w-4 items-center justify-center rounded-full border-2 border-[#0284C7] bg-[#FDFBF7]">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#0284C7]" />
+                  <span className="absolute -left-[9px] top-1 flex h-4 w-4 items-center justify-center rounded-full border-2 border-[#2563EB] bg-[#F8FAFC]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#2563EB]" />
                   </span>
                   <p className="font-heading text-base font-semibold text-[#0F172A]">
                     {title} <span className="ml-2 text-xs font-normal uppercase tracking-wide text-[#94A3B8]">cycle {i + 1} of 3</span>
@@ -104,15 +104,15 @@ export default function Subscription() {
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-2xl bg-[#0F172A] p-10 text-[#FDFBF7] shadow-2xl lg:sticky lg:top-24"
+            className="rounded-2xl bg-[#0F172A] p-10 text-[#F8FAFC] shadow-2xl lg:sticky lg:top-24"
             data-testid="subscription-card"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FDE047]">Quarterly Reading Plan</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#60A5FA]">Quarterly Reading Plan</p>
             <div className="mt-4 flex items-baseline gap-2">
               <span className="font-display text-6xl font-semibold tracking-tight">₹1,499</span>
               <span className="text-sm text-[#CBD5E1]">one-time, 3 months</span>
             </div>
-            <ul className="mt-8 space-y-3 border-t border-[#FDFBF7]/10 pt-8 text-sm text-[#CBD5E1]">
+            <ul className="mt-8 space-y-3 border-t border-[#F8FAFC]/10 pt-8 text-sm text-[#CBD5E1]">
               {[
                 "12 books total — 4 each month",
                 "Free delivery & return pickup",
@@ -120,7 +120,7 @@ export default function Subscription() {
                 "WhatsApp reminders on day 27 and day 29",
               ].map((line) => (
                 <li key={line} className="flex items-center gap-2.5">
-                  <BadgeCheck className="h-4 w-4 shrink-0 text-[#FDE047]" />
+                  <BadgeCheck className="h-4 w-4 shrink-0 text-[#60A5FA]" />
                   {line}
                 </li>
               ))}
@@ -134,7 +134,7 @@ export default function Subscription() {
                 <button
                   data-testid="go-to-catalog-button"
                   onClick={() => navigate("/catalog")}
-                  className="mt-4 w-full rounded-full bg-[#0284C7] py-4 text-sm font-semibold transition-colors hover:bg-[#0EA5E9]"
+                  className="mt-4 w-full rounded-full bg-[#2563EB] py-4 text-sm font-semibold transition-colors hover:bg-[#3B82F6]"
                 >
                   Choose this month's books
                 </button>
@@ -143,7 +143,7 @@ export default function Subscription() {
               <button
                 data-testid="subscribe-now-button"
                 onClick={() => setPayOpen(true)}
-                className="mt-8 w-full rounded-full bg-[#0284C7] py-4 text-sm font-semibold transition-colors hover:bg-[#0EA5E9]"
+                className="mt-8 w-full rounded-full bg-[#2563EB] py-4 text-sm font-semibold transition-colors hover:bg-[#3B82F6]"
               >
                 Pay ₹1,499 & start
               </button>
@@ -154,7 +154,7 @@ export default function Subscription() {
       </section>
 
       <Dialog open={payOpen} onOpenChange={setPayOpen}>
-        <DialogContent className="bg-[#FDFBF7] sm:max-w-md" data-testid="payment-dialog">
+        <DialogContent className="bg-[#F8FAFC] sm:max-w-md" data-testid="payment-dialog">
           <DialogHeader>
             <DialogTitle className="font-display text-2xl text-[#0F172A]">Checkout — ₹1,499</DialogTitle>
           </DialogHeader>
@@ -163,7 +163,7 @@ export default function Subscription() {
               data-testid="pay-method-upi"
               onClick={() => setMethod("upi")}
               className={`flex items-center justify-center gap-2 rounded-xl border py-3 text-sm font-semibold transition-colors ${
-                method === "upi" ? "border-[#0284C7] bg-[#0284C7]/10 text-[#0284C7]" : "border-[#F1E8DC] bg-white text-[#64748B]"
+                method === "upi" ? "border-[#2563EB] bg-[#2563EB]/10 text-[#2563EB]" : "border-[#E2E8F0] bg-white text-[#64748B]"
               }`}
             >
               <Smartphone className="h-4 w-4" /> UPI
@@ -172,7 +172,7 @@ export default function Subscription() {
               data-testid="pay-method-card"
               onClick={() => setMethod("card")}
               className={`flex items-center justify-center gap-2 rounded-xl border py-3 text-sm font-semibold transition-colors ${
-                method === "card" ? "border-[#0284C7] bg-[#0284C7]/10 text-[#0284C7]" : "border-[#F1E8DC] bg-white text-[#64748B]"
+                method === "card" ? "border-[#2563EB] bg-[#2563EB]/10 text-[#2563EB]" : "border-[#E2E8F0] bg-white text-[#64748B]"
               }`}
             >
               <CreditCard className="h-4 w-4" /> Card
@@ -205,7 +205,7 @@ export default function Subscription() {
             data-testid="payment-mock-submit"
             onClick={pay}
             disabled={paying}
-            className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-[#0F172A] py-3.5 text-sm font-semibold text-[#FDFBF7] transition-colors hover:bg-[#0284C7] disabled:opacity-60"
+            className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-[#0F172A] py-3.5 text-sm font-semibold text-[#F8FAFC] transition-colors hover:bg-[#2563EB] disabled:opacity-60"
           >
             {paying ? (
               <>

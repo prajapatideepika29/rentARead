@@ -73,15 +73,15 @@ export function BundleDock() {
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           className="fixed bottom-6 left-1/2 z-40 -translate-x-1/2"
         >
-          <div className="flex items-center gap-4 rounded-full border-2 border-[#BAE6FD] bg-white/95 py-2 pl-5 pr-2 text-[#0F172A] shadow-[0_12px_40px_rgba(2,132,199,0.18)] backdrop-blur-xl">
-            <span data-testid="bundle-dock-counter" className="text-sm font-bold">
+          <div className="flex items-center gap-4 rounded-2xl border border-white/15 bg-slate-900/90 py-2.5 pl-5 pr-2.5 text-white shadow-2xl backdrop-blur-xl">
+            <span data-testid="bundle-dock-counter" className="text-sm font-semibold">
               {ids.length}/4 in this month's box
             </span>
             <div className="hidden items-center gap-1.5 sm:flex">
               {Array.from({ length: 4 }).map((_, i) => (
                 <span
                   key={i}
-                  className={`h-2.5 w-2.5 rounded-full transition-colors ${i < ids.length ? "bg-[#F59E0B]" : "bg-[#E2E8F0]"}`}
+                  className={`h-2 w-2 rounded-full transition-colors ${i < ids.length ? "bg-[#34D399]" : "bg-white/20"}`}
                 />
               ))}
             </div>
@@ -89,7 +89,7 @@ export function BundleDock() {
               data-testid="checkout-button"
               onClick={() => void checkout()}
               disabled={busy || order.isPending}
-              className="flex items-center gap-1.5 rounded-full bg-[#0284C7] px-5 py-2.5 text-sm font-bold text-white transition-all hover:bg-[#0369A1] active:translate-y-0.5 disabled:opacity-50"
+              className="flex items-center gap-1.5 rounded-xl bg-[#2563EB] px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-[#1D4ED8] active:scale-[0.98] disabled:opacity-50"
             >
               {busy || order.isPending ? (
                 <Loader2 className="h-4 w-4 animate-spin" />

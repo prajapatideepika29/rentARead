@@ -51,26 +51,26 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex min-h-screen bg-[#FDFBF7]">
+    <div className="flex min-h-screen bg-[#F8FAFC]">
       <div className="relative hidden w-[42%] bg-[#0F172A] p-12 lg:flex lg:flex-col lg:justify-between">
         <Link to="/" className="flex items-center gap-2.5">
           <Logo className="h-9 w-9" />
-          <span className="font-display text-xl font-semibold text-[#FDFBF7]">RentARead</span>
+          <span className="font-display text-xl font-semibold text-[#F8FAFC]">RentARead</span>
         </Link>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#FDE047]">The quarterly plan</p>
-          <h2 className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight text-[#FDFBF7]">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#60A5FA]">The quarterly plan</p>
+          <h2 className="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight text-[#F8FAFC]">
             3 months.
             <br />
             12 books.
             <br />
-            <span className="italic text-[#FDE047]">₹1,499 flat.</span>
+            <span className="italic text-[#60A5FA]">₹1,499 flat.</span>
           </h2>
           <ul className="mt-10 space-y-5">
             {PERKS.map((p) => (
               <li key={p.text} className="flex items-center gap-3 text-sm text-[#CBD5E1]">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FDFBF7]/10">
-                  <p.icon className="h-4 w-4 text-[#FDE047]" />
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F8FAFC]/10">
+                  <p.icon className="h-4 w-4 text-[#60A5FA]" />
                 </span>
                 {p.text}
               </li>
@@ -125,7 +125,7 @@ export default function Signup() {
               data-testid="signup-form-submit-button"
               type="submit"
               disabled={busy || !pinOk}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-[#0284C7] py-3.5 text-sm font-semibold text-[#FDFBF7] transition-colors hover:bg-[#0369A1] disabled:opacity-50"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-[#2563EB] py-3.5 text-sm font-semibold text-[#F8FAFC] transition-colors hover:bg-[#1D4ED8] disabled:opacity-50"
             >
               {busy && <Loader2 className="h-4 w-4 animate-spin" />}
               {pinOk ? "Create my account" : "Check your pincode to continue"}
@@ -134,7 +134,7 @@ export default function Signup() {
 
           <p className="mt-8 text-sm text-[#64748B]">
             Already a member?{" "}
-            <Link to="/login" className="font-semibold text-[#0284C7] underline-offset-4 hover:underline" data-testid="signup-login-link">
+            <Link to="/login" className="font-semibold text-[#2563EB] underline-offset-4 hover:underline" data-testid="signup-login-link">
               Log in
             </Link>
           </p>

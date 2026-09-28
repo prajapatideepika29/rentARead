@@ -38,7 +38,7 @@ export default function ResetPassword() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#FDFBF7] px-6 py-16">
+    <div className="flex min-h-screen items-center justify-center bg-[#F8FAFC] px-6 py-16">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ export default function ResetPassword() {
             <p className="mt-3 text-sm text-[#64748B]">Use the full link from your reset email, or request a fresh one.</p>
             <Link
               to="/forgot-password"
-              className="mt-8 inline-block rounded-full bg-[#0F172A] px-8 py-3 text-sm font-semibold text-[#FDFBF7] transition-colors hover:bg-[#0284C7]"
+              className="mt-8 inline-block rounded-full bg-[#0F172A] px-8 py-3 text-sm font-semibold text-[#F8FAFC] transition-colors hover:bg-[#2563EB]"
             >
               Request a new link
             </Link>
@@ -106,7 +106,7 @@ export default function ResetPassword() {
                 data-testid="reset-submit-button"
                 type="submit"
                 disabled={busy}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-[#0284C7] py-3.5 text-sm font-semibold text-[#FDFBF7] transition-colors hover:bg-[#0369A1] disabled:opacity-50"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-[#2563EB] py-3.5 text-sm font-semibold text-[#F8FAFC] transition-colors hover:bg-[#1D4ED8] disabled:opacity-50"
               >
                 {busy && <Loader2 className="h-4 w-4 animate-spin" />}
                 Update password

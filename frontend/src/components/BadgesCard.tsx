@@ -22,10 +22,10 @@ export function BadgesCard() {
   const earnedCount = badges.filter((b) => b.earned).length;
 
   return (
-    <div className="rounded-2xl border-2 border-[#F1E8DC] bg-white p-6" data-testid="badges-card">
+    <div className="rounded-2xl border-2 border-[#E2E8F0] bg-white p-6" data-testid="badges-card">
       <div className="flex items-center justify-between">
         <h2 className="font-heading text-base font-bold text-[#0F172A]">Reading badges</h2>
-        <span className="rounded-full bg-[#FEF9C3] px-3 py-1 text-xs font-extrabold text-[#78350F]" data-testid="badges-earned-count">
+        <span className="rounded-full bg-[#FFFBEB] px-3 py-1 text-xs font-extrabold text-[#78350F]" data-testid="badges-earned-count">
           {earnedCount}/{badges.length} earned
         </span>
       </div>
@@ -41,8 +41,8 @@ export function BadgesCard() {
               transition={{ delay: i * 0.06, type: "spring", stiffness: 400, damping: 25 }}
               className={`rounded-2xl border-2 p-3.5 text-center ${
                 badge.earned
-                  ? "border-[#FDE68A] bg-[#FEFCE8]"
-                  : "border-dashed border-[#E2E8F0] bg-[#FDFBF7] opacity-60"
+                  ? "border-[#FDE68A] bg-[#FFFBEB]"
+                  : "border-dashed border-[#E2E8F0] bg-[#F8FAFC] opacity-60"
               }`}
             >
               <span

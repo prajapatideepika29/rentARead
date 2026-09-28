@@ -13,7 +13,7 @@ const PINCODES = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#0F172A] text-[#FDFBF7]">
+    <footer className="bg-[#0F172A] text-[#F8FAFC]">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
@@ -34,7 +34,7 @@ export function Footer() {
             <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-[#94A3B8]">
               {PINCODES.map((p) => (
                 <li key={p.code} data-testid={`footer-pincode-${p.code}`}>
-                  <span className="font-mono text-[#FDE047]">{p.code}</span> · {p.hub}
+                  <span className="font-mono text-[#60A5FA]">{p.code}</span> · {p.hub}
                 </li>
               ))}
             </ul>
@@ -43,9 +43,9 @@ export function Footer() {
           <div className="md:col-span-3">
             <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#CBD5E1]">Explore</h4>
             <ul className="mt-4 space-y-2 text-sm text-[#94A3B8]">
-              <li><Link to="/catalog" className="transition-colors hover:text-[#FDE047]">Browse the catalog</Link></li>
-              <li><Link to="/subscription" className="transition-colors hover:text-[#FDE047]">Quarterly plan</Link></li>
-              <li><Link to="/dashboard" className="transition-colors hover:text-[#FDE047]">Member dashboard</Link></li>
+              <li><Link to="/catalog" className="transition-colors hover:text-[#60A5FA]">Browse the catalog</Link></li>
+              <li><Link to="/subscription" className="transition-colors hover:text-[#60A5FA]">Quarterly plan</Link></li>
+              <li><Link to="/dashboard" className="transition-colors hover:text-[#60A5FA]">Member dashboard</Link></li>
               <li>
                 <a
                   href="https://wa.me/919999999999"
@@ -60,7 +60,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-2 border-t border-[#FDFBF7]/10 pt-6 text-xs text-[#94A3B8] sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-2 border-t border-[#F8FAFC]/10 pt-6 text-xs text-[#94A3B8] sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} RentARead. Twice-read, thrice-loved.</span>
           <span>3 months · 12 books · ₹1,499 · zero deposit</span>
         </div>

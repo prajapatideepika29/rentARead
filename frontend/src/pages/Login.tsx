@@ -38,17 +38,17 @@ export default function Login() {
   };
 
   return (
-    <div className="flex min-h-screen bg-[#FDFBF7]">
+    <div className="flex min-h-screen bg-[#F8FAFC]">
       <div className="relative hidden w-[42%] overflow-hidden bg-[#0F172A] lg:block">
         <img src={SIDE_IMG} alt="Hands holding an open novel over a warm drink" className="absolute inset-0 h-full w-full object-cover opacity-55" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/95 via-[#0F172A]/40 to-[#0F172A]/60" />
         <div className="relative flex h-full flex-col justify-between p-12">
           <Link to="/" className="flex items-center gap-2.5">
             <Logo className="h-9 w-9" />
-            <span className="font-display text-xl font-semibold text-[#FDFBF7]">RentARead</span>
+            <span className="font-display text-xl font-semibold text-[#F8FAFC]">RentARead</span>
           </Link>
           <div>
-            <p className="font-display text-3xl font-bold leading-snug text-[#FDFBF7]">
+            <p className="font-display text-3xl font-bold leading-snug text-[#F8FAFC]">
               “Once you learn to read, you will be forever free.”
             </p>
             <p className="mt-3 text-xs uppercase tracking-[0.15em] text-[#CBD5E1]">— Frederick Douglass</p>
@@ -90,7 +90,7 @@ export default function Login() {
                 <Link
                   to="/forgot-password"
                   data-testid="forgot-password-link"
-                  className="text-xs font-semibold text-[#0284C7] underline-offset-4 hover:underline"
+                  className="text-xs font-semibold text-[#2563EB] underline-offset-4 hover:underline"
                 >
                   Forgot password?
                 </Link>
@@ -115,7 +115,7 @@ export default function Login() {
               data-testid="login-form-submit-button"
               type="submit"
               disabled={busy}
-              className="flex w-full items-center justify-center gap-2 rounded-full bg-[#0284C7] py-3.5 text-sm font-semibold text-[#FDFBF7] transition-colors hover:bg-[#0369A1] disabled:opacity-50"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-[#2563EB] py-3.5 text-sm font-semibold text-[#F8FAFC] transition-colors hover:bg-[#1D4ED8] disabled:opacity-50"
             >
               {busy && <Loader2 className="h-4 w-4 animate-spin" />}
               Log in
@@ -124,7 +124,7 @@ export default function Login() {
 
           <p className="mt-8 text-sm text-[#64748B]">
             New to RentARead?{" "}
-            <Link to="/signup" className="font-semibold text-[#0284C7] underline-offset-4 hover:underline" data-testid="login-signup-link">
+            <Link to="/signup" className="font-semibold text-[#2563EB] underline-offset-4 hover:underline" data-testid="login-signup-link">
               Join the library
             </Link>
           </p>

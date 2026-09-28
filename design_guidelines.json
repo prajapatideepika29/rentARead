@@ -1,317 +1,287 @@
 {
   "theme": "light",
-  "archetype": "Pastel & Soft with Playful Storybook Charm (Kid-Friendly & Parent-Trustworthy)",
-  "overview": {
-    "brand_name": "RentARead",
-    "mission": "Localized quarterly book rental membership for kids & parents — 4 fresh books every month (12 total/quarter) delivered to your door with WhatsApp magic, effortless swap-cycles, and zero clutter.",
-    "retheme_vision": "Whole-site playful retheme: soft storybook cream canvas, sky blue horizons, fresh leaf green accents, sunny warm yellow highlights, friendly chunky rounded shapes (rounded-2xl to rounded-3xl), playful sticker badges, wiggly underlines, cloud/wave dividers, and upbeat parent-trustworthy micro-interactions. All functional flows (pincode checks, 4-book dock, mock checkout, dashboard due countdowns, WhatsApp log, toys waitlist, auth) stay completely intact."
+  "archetype": "Modern Light SaaS + Soft Mesh Gradient Glass",
+  "description": "A high-precision modern SaaS foundation (crisp white, light slate-stone backdrop #F8FAFC / #F6F8FB, hairline borders 1px solid rgba(15,23,42,0.08), high negative space, Linear/Notion layout rigor) blended with friendly soft radial mesh gradients and crystal glassmorphism cards. Family-friendly and trustworthy without feeling childish or cartoonish. Indian rupee locale (₹1,499/quarter).",
+  "fonts": {
+    "heading": {
+      "family": "Plus Jakarta Sans Variable",
+      "import_statement": "@import \"@fontsource-variable/plus-jakarta-sans\";",
+      "css_variable": "--font-heading: 'Plus Jakarta Sans Variable', sans-serif;",
+      "weight_headline": "font-bold tracking-tight",
+      "weight_section": "font-semibold tracking-tight"
+    },
+    "body": {
+      "family": "Instrument Sans Variable",
+      "import_statement": "@import \"@fontsource-variable/instrument-sans\";",
+      "css_variable": "--font-sans: 'Instrument Sans Variable', sans-serif;",
+      "weight_body": "font-normal leading-relaxed"
+    },
+    "mono": {
+      "family": "Geist Mono Variable",
+      "import_statement": "@import \"@fontsource-variable/geist-mono\";",
+      "css_variable": "--font-mono: 'Geist Mono Variable', monospace;"
+    }
+  },
+  "typography": {
+    "scale_px": {
+      "display": 56,
+      "h1": 44,
+      "h2": 32,
+      "h3": 22,
+      "body": 16,
+      "caption": 14
+    },
+    "rules": {
+      "h1": "text-4xl sm:text-5xl lg:text-[56px] font-bold tracking-[-0.03em] leading-[1.1]",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-[-0.02em] leading-tight",
+      "h3": "text-xl sm:text-2xl font-semibold tracking-tight",
+      "h4": "text-lg font-semibold tracking-normal",
+      "body": "text-base font-normal leading-relaxed text-slate-600",
+      "body_sm": "text-sm font-normal text-slate-500",
+      "caption": "text-xs uppercase tracking-[0.18em] font-semibold text-slate-400",
+      "mono_data": "font-mono text-sm tracking-tight font-medium"
+    }
   },
   "colors": {
     "surfaces": [
       {
         "name": "page",
         "kind": "solid",
-        "bg": "#FDFBF7",
-        "on_bg": "#1E293B",
+        "bg": "#F8FAFC",
+        "on_bg": "#0F172A",
         "on_bg_muted": "#64748B",
         "roles": {
-          "link": "#0284C7",
+          "link": "#2563EB",
           "error": "#DC2626",
           "success": "#16A34A",
-          "warning": "#D97706"
+          "brand_accent": "#2563EB"
         }
       },
       {
-        "name": "card_white",
+        "name": "card_solid",
         "kind": "solid",
         "bg": "#FFFFFF",
         "on_bg": "#0F172A",
         "on_bg_muted": "#64748B",
         "roles": {
-          "border": "#F1E8DC",
-          "hover_border": "#BAE6FD"
+          "link": "#2563EB",
+          "error": "#DC2626",
+          "success": "#16A34A"
         }
       },
       {
-        "name": "soft_sky_panel",
-        "kind": "solid",
-        "bg": "#F0F9FF",
-        "on_bg": "#0C4A6E",
-        "on_bg_muted": "#0369A1",
+        "name": "glass_card",
+        "kind": "glass",
+        "contrast_against": "#F1F5F9",
+        "guarantee": "background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(16px) saturate(160%); border: 1px solid rgba(255, 255, 255, 0.85); box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);",
+        "on_bg": "#0F172A",
+        "on_bg_muted": "#64748B",
         "roles": {
-          "accent": "#0284C7"
+          "link": "#2563EB",
+          "error": "#DC2626",
+          "success": "#16A34A"
         }
       },
       {
-        "name": "soft_mint_panel",
-        "kind": "solid",
-        "bg": "#F0FDF4",
-        "on_bg": "#14532D",
-        "on_bg_muted": "#15803D",
+        "name": "header_glass",
+        "kind": "glass",
+        "contrast_against": "#F8FAFC",
+        "guarantee": "background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid rgba(15, 23, 42, 0.06);",
+        "on_bg": "#0F172A",
+        "on_bg_muted": "#475569",
         "roles": {
-          "accent": "#16A34A"
+          "link": "#2563EB"
         }
       },
       {
-        "name": "soft_sun_panel",
+        "name": "brand_primary_button",
         "kind": "solid",
-        "bg": "#FEFCE8",
-        "on_bg": "#713F12",
-        "on_bg_muted": "#A16207",
-        "roles": {
-          "accent": "#D97706"
-        }
-      },
-      {
-        "name": "soft_lavender_panel",
-        "kind": "solid",
-        "bg": "#FAF5FF",
-        "on_bg": "#581C87",
-        "on_bg_muted": "#7E22CE",
-        "roles": {
-          "accent": "#9333EA"
-        }
-      },
-      {
-        "name": "primary_button",
-        "kind": "solid",
-        "bg": "#0284C7",
+        "bg": "#2563EB",
         "on_bg": "#FFFFFF",
-        "on_bg_muted": "#E0F2FE",
-        "roles": {
-          "hover": "#0369A1",
-          "active": "#075985"
-        }
+        "on_bg_muted": "#DBEAFE",
+        "roles": {}
       },
       {
-        "name": "secondary_green_button",
+        "name": "accent_emerald_badge",
         "kind": "solid",
-        "bg": "#16A34A",
-        "on_bg": "#FFFFFF",
-        "on_bg_muted": "#DCFCE7",
-        "roles": {
-          "hover": "#15803D",
-          "active": "#166534"
-        }
+        "bg": "#ECFDF5",
+        "on_bg": "#065F46",
+        "on_bg_muted": "#047857",
+        "roles": {}
       },
       {
-        "name": "sunny_accent_button",
+        "name": "accent_amber_badge",
         "kind": "solid",
-        "bg": "#F59E0B",
-        "on_bg": "#78350F",
-        "on_bg_muted": "#92400E",
-        "roles": {
-          "hover": "#D97706",
-          "active": "#B45309"
-        }
+        "bg": "#FFFBEB",
+        "on_bg": "#92400E",
+        "on_bg_muted": "#B45309",
+        "roles": {}
       },
       {
-        "name": "dark_playful_footer",
+        "name": "accent_indigo_badge",
+        "kind": "solid",
+        "bg": "#EEF2FF",
+        "on_bg": "#3730A3",
+        "on_bg_muted": "#4F46E5",
+        "roles": {}
+      },
+      {
+        "name": "whatsapp_bubble_incoming",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#0F172A",
+        "on_bg_muted": "#64748B",
+        "roles": {}
+      },
+      {
+        "name": "whatsapp_bubble_outgoing",
+        "kind": "solid",
+        "bg": "#DCF8C6",
+        "on_bg": "#064E3B",
+        "on_bg_muted": "#047857",
+        "roles": {}
+      },
+      {
+        "name": "footer_inverse",
         "kind": "solid",
         "bg": "#0F172A",
         "on_bg": "#F8FAFC",
         "on_bg_muted": "#94A3B8",
         "roles": {
-          "link": "#38BDF8",
-          "accent": "#FDE047"
+          "link": "#60A5FA",
+          "brand_accent": "#38BDF8"
         }
       },
       {
-        "name": "whatsapp_bubble",
-        "kind": "solid",
-        "bg": "#DCFCE7",
-        "on_bg": "#14532D",
-        "on_bg_muted": "#166534"
-      },
-      {
-        "name": "dock_glass",
+        "name": "bundle_dock_floating",
         "kind": "glass",
         "contrast_against": "#FFFFFF",
-        "guarantee": "backdrop-blur-xl bg-white/90 border-2 border-sky-200 shadow-[0_12px_40px_rgba(2,132,199,0.12)]",
-        "on_bg": "#0F172A",
-        "on_bg_muted": "#64748B",
+        "guarantee": "background: rgba(15, 23, 42, 0.92); backdrop-filter: blur(24px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.35);",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8",
         "roles": {
-          "accent": "#0284C7"
+          "link": "#60A5FA",
+          "success": "#34D399"
         }
       }
     ],
-    "accent": "#0284C7",
+    "accent": "#2563EB",
     "on_accent": "#FFFFFF",
-    "palette_tokens": {
-      "cream_bg": "#FDFBF7",
-      "sky_blue_50": "#F0F9FF",
-      "sky_blue_100": "#E0F2FE",
-      "sky_blue_500": "#0EA5E9",
-      "sky_blue_600": "#0284C7",
-      "sky_blue_700": "#0369A1",
-      "leaf_green_50": "#F0FDF4",
-      "leaf_green_500": "#22C55E",
-      "leaf_green_600": "#16A34A",
-      "leaf_green_700": "#15803D",
-      "sunny_yellow_50": "#FEFCE8",
-      "sunny_yellow_100": "#FEF9C3",
-      "sunny_yellow_400": "#FACC15",
-      "sunny_yellow_500": "#F59E0B",
-      "warm_amber_900": "#78350F",
-      "coral_pink_50": "#FFF1F2",
-      "coral_pink_500": "#F43F5E",
-      "ink_dark": "#0F172A",
-      "ink_body": "#1E293B",
-      "ink_muted": "#64748B",
-      "border_soft": "#F1E8DC",
-      "border_card": "#E2E8F0"
-    }
-  },
-  "typography": {
-    "heading_family": "'Poppins', sans-serif",
-    "display_family": "'Poppins', sans-serif",
-    "body_family": "'DM Sans Variable', -apple-system, BlinkMacSystemFont, sans-serif",
-    "css_import_instructions": [
-      "@import \"@fontsource/poppins/400.css\";",
-      "@import \"@fontsource/poppins/600.css\";",
-      "@import \"@fontsource/poppins/700.css\";",
-      "@import \"@fontsource-variable/dm-sans\";",
-      "Set --font-heading: 'Poppins', sans-serif; --font-display: 'Poppins', sans-serif; --font-sans: 'DM Sans Variable', sans-serif;"
-    ],
-    "scale_px": {
-      "display": 60,
-      "h1": 48,
-      "h2": 36,
-      "h3": 24,
-      "body": 16,
-      "caption": 14
-    },
-    "hierarchy_rules": {
-      "hero_h1": "text-4xl sm:text-5xl lg:text-6xl font-bold font-display tracking-tight text-slate-900 leading-[1.15]",
-      "section_h2": "text-2xl sm:text-3xl lg:text-4xl font-bold font-heading tracking-tight text-slate-900",
-      "card_title_h3": "text-lg sm:text-xl font-bold font-heading text-slate-900",
-      "badge_pill": "text-xs font-semibold tracking-wider uppercase",
-      "body_text": "text-base leading-relaxed text-slate-700",
-      "caption_text": "text-sm text-slate-500 leading-normal"
+    "palette": {
+      "brand_primary": "#2563EB",
+      "brand_primary_hover": "#1D4ED8",
+      "brand_primary_subtle": "#EFF6FF",
+      "navy_slate_dark": "#0F172A",
+      "slate_body": "#475569",
+      "slate_muted": "#64748B",
+      "border_hairline": "rgba(15, 23, 42, 0.08)",
+      "border_card": "rgba(15, 23, 42, 0.06)",
+      "mesh_ambient_1": "radial-gradient(at 15% 10%, rgba(99, 102, 241, 0.12) 0px, transparent 65%)",
+      "mesh_ambient_2": "radial-gradient(at 85% 25%, rgba(56, 189, 248, 0.14) 0px, transparent 60%)",
+      "mesh_ambient_3": "radial-gradient(at 50% 80%, rgba(244, 114, 182, 0.08) 0px, transparent 55%)"
     }
   },
   "entry_surfaces": {
-    "/": "storybook split hero — friendly headline, value pillars + pincode bar left, floating pastel book stack and badge showcase right",
-    "/catalog": "playful book library — pill filter ribbon top, 4-book live bundle dock sticky bottom, responsive grid of colorful book cards with age tags",
-    "/subscription": "membership plan card & mock checkout — sunny ₹1,499 quarterly highlight, WhatsApp perks badge, trust seals and address step",
-    "/dashboard": "child & parent command center — current 4-book shelf with due countdown pill, swap request CTA, and WhatsApp message log feed",
-    "/login": "storybook split login — soft sky illustrated perks panel left, chunky card form right",
-    "/signup": "storybook split signup — membership benefits banner left, 3-step chunky card form right",
-    "/forgot-password": "storybook centered recovery card — friendly lock glyph, email input, back-to-login pill",
-    "/reset-password": "storybook centered password reset card — key glyph, password inputs, secure confirmation button"
+    "/": "split hero — crisp value proposition, pincode checker pill & subscription trigger left; interactive 3D-angled glass preview card of 4-book bundle right against subtle mesh glow",
+    "/login": "branded split auth — left side modern SaaS testimonial & reader stats panel with soft gradient aura; right side clean white card with phone/email credentials & OTP login",
+    "/signup": "branded split auth — left side subscription summary with quarterly ₹1,499 benefits checkmarks; right side crisp onboarding registration form with pincode lookup",
+    "/forgot-password": "centered minimal card — sleek security reset flow with inline instructions and back-to-login link",
+    "/reset-password": "centered minimal card — password update form with instant feedback state",
+    "/catalog": "top sticky search + age-group ribbon bar; below: responsive bento book grid with quick-bundle CTA and detail modal",
+    "/subscription": "tiered feature comparison + clean quarterly ₹1,499 card with razorpay-style mock modal and pincode address step",
+    "/dashboard": "command-center layout — top active quota status pill, countdown ring, swap request timeline, reading milestone badges and live WhatsApp notification drawer"
+  },
+  "visual_enhancers": {
+    "mesh_gradients": {
+      "strategy": "CSS-only layered radial gradients on body background and hero wrappers. Generates depth without image asset weight or heavy paint.",
+      "hero_mesh_class": "relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50/50 before:absolute before:inset-0 before:bg-[radial-gradient(circle_800px_at_10%_20%,rgba(37,99,235,0.07),transparent_70%)] after:absolute after:inset-0 after:bg-[radial-gradient(circle_600px_at_85%_30%,rgba(14,165,233,0.08),transparent_65%)]"
+    },
+    "glassmorphism": {
+      "card_style": "bg-white/80 backdrop-blur-md border border-slate-200/80 shadow-[0_4px_24px_-4px_rgba(15,23,42,0.04)] hover:shadow-[0_8px_30px_-4px_rgba(15,23,42,0.08)] hover:border-slate-300 transition-all duration-300 rounded-2xl",
+      "dock_style": "bg-slate-900/90 backdrop-blur-xl border border-white/15 text-white shadow-2xl rounded-2xl"
+    },
+    "borders": {
+      "rule": "1px hairline border (border-slate-200/80 or border-black/5) to anchor content crisply on light canvas. Never use heavy outlines."
+    },
+    "shadows": {
+      "soft_lift": "shadow-[0_2px_8px_rgba(0,0,0,0.04),0_12px_24px_-4px_rgba(0,0,0,0.03)]",
+      "dropdown_glass": "shadow-[0_10px_38px_-10px_rgba(22,23,24,0.15),0_10px_20px_-15px_rgba(22,23,24,0.1)]"
+    }
+  },
+  "grids_and_layouts": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "hero_grid": "grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center pt-28 pb-16 lg:pt-36 lg:pb-24",
+    "bento_catalog_grid": "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6",
+    "dashboard_grid": "grid grid-cols-1 lg:grid-cols-12 gap-8 items-start",
+    "features_tetris_grid": "grid grid-cols-1 md:grid-cols-12 gap-6"
   },
   "component_styling": {
     "buttons": {
-      "style": "Chunky rounded pill or rounded-2xl buttons with solid tactile feedback",
-      "primary": "bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-full px-6 py-3 shadow-[0_4px_14px_rgba(2,132,199,0.35)] hover:shadow-[0_6px_20px_rgba(2,132,199,0.45)] active:translate-y-0.5 transition-all",
-      "secondary_green": "bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-full px-6 py-3 shadow-[0_4px_14px_rgba(16,185,129,0.3)] active:translate-y-0.5 transition-all",
-      "sunny_accent": "bg-amber-400 hover:bg-amber-500 text-amber-950 font-bold rounded-full px-6 py-3 shadow-[0_4px_14px_rgba(245,158,11,0.35)] active:translate-y-0.5 transition-all",
-      "outline_pill": "border-2 border-sky-200 hover:border-sky-400 bg-white hover:bg-sky-50 text-sky-800 font-semibold rounded-full px-5 py-2.5 transition-all"
+      "primary": "inline-flex items-center justify-center font-medium rounded-xl bg-blue-600 text-white shadow-sm hover:bg-blue-700 active:scale-[0.98] transition-all px-5 py-2.5 text-sm focus-visible:ring-2 focus-visible:ring-blue-600/30",
+      "secondary": "inline-flex items-center justify-center font-medium rounded-xl bg-white border border-slate-200 text-slate-700 shadow-sm hover:bg-slate-50 hover:text-slate-900 active:scale-[0.98] transition-all px-4 py-2 text-sm",
+      "ghost": "inline-flex items-center justify-center font-medium rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 transition-all px-3 py-1.5 text-sm",
+      "pill_badge": "inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide"
     },
-    "cards": {
-      "standard": "bg-white rounded-3xl p-6 border-2 border-amber-100/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_14px_35px_rgba(2,132,199,0.08)] hover:-translate-y-1 transition-all duration-300",
-      "interactive_book_card": "bg-white rounded-2xl p-4 border-2 border-slate-100 hover:border-sky-300 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group",
-      "highlight_card": "bg-gradient-to-br from-amber-50 to-orange-50/60 rounded-3xl p-8 border-2 border-amber-200 shadow-sm"
+    "inputs": {
+      "text": "w-full rounded-xl border border-slate-200 bg-white/90 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600/20 focus:border-blue-600 transition-all",
+      "pincode_checker": "flex items-center p-1.5 rounded-2xl bg-white/90 border border-slate-200 shadow-sm focus-within:ring-2 focus-within:ring-blue-600/20 focus-within:border-blue-600"
     },
-    "badges_and_pills": {
-      "age_pill": "bg-sky-100 text-sky-800 font-bold text-xs px-3 py-1 rounded-full border border-sky-200 inline-flex items-center gap-1",
-      "genre_pill": "bg-emerald-100 text-emerald-800 font-bold text-xs px-3 py-1 rounded-full border border-emerald-200",
-      "status_active": "bg-emerald-100 text-emerald-800 font-bold text-xs px-3 py-1 rounded-full border border-emerald-300 flex items-center gap-1.5",
-      "status_due": "bg-amber-100 text-amber-900 font-bold text-xs px-3 py-1 rounded-full border border-amber-300 animate-pulse",
-      "sticker_badge": "bg-yellow-300 text-yellow-950 font-extrabold text-xs px-3.5 py-1.5 rounded-full shadow-sm rotate-[-2deg] hover:rotate-0 transition-transform"
+    "book_card": {
+      "wrapper": "group relative flex flex-col rounded-2xl bg-white border border-slate-200/80 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-blue-200",
+      "cover": "aspect-[3/4] w-full rounded-xl overflow-hidden bg-slate-100 mb-3.5 relative",
+      "age_tag": "absolute top-2 left-2 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-semibold px-2 py-0.5 rounded-md"
     },
-    "bundle_dock": {
-      "container": "fixed bottom-5 left-1/2 -translate-x-1/2 z-40 w-[92%] max-w-2xl bg-white/95 backdrop-blur-xl rounded-full p-3 px-5 border-2 border-sky-200 shadow-[0_12px_40px_rgba(2,132,199,0.18)] flex items-center justify-between gap-4",
-      "book_slot_filled": "w-11 h-11 rounded-xl bg-sky-50 border-2 border-sky-400 flex items-center justify-center relative overflow-hidden shadow-sm",
-      "book_slot_empty": "w-11 h-11 rounded-xl border-2 border-dashed border-sky-200 bg-slate-50/80 flex items-center justify-center text-sky-400 text-xs font-bold"
+    "dock": {
+      "wrapper": "fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-4 px-5 py-3 rounded-2xl bg-slate-900/90 backdrop-blur-xl border border-white/20 text-white shadow-2xl transition-all duration-300"
     }
   },
-  "playful_decorative_motifs": {
-    "wiggly_underline": "Use a subtle yellow/sky wavy SVG underline under key words like 'Unlimited Reading', 'Zero Screen Guilt', 'Happy Kids'",
-    "clouds_and_waves": "Gentle SVG curved wave dividers (`text-[#F0F9FF]` or `text-[#FDFBF7]`) between major sections instead of straight cuts",
-    "stars_and_sparkles": "Small Lucide icon accents (`Sparkles`, `Star`, `BookOpen`, `Smile`, `Heart`) with soft pastel circle badges behind them",
-    "sticker_tags": "Rotate small tags by -2deg or +3deg with bouncy hover transition to feel like cute stickers"
+  "motion": {
+    "engine": "Lenis for smooth scrolling + motion/react for layout transitions",
+    "hero_load": "staggered fade-up with translateY(16px) -> translateY(0px) and opacity 0 -> 1 over 500ms ease-out",
+    "marquee": "slow continuous smooth drift for curated publishers/curators using react-fast-marquee or CSS keyframes (duration: 35s)",
+    "micro_interactions": "hover:scale-[1.02] on book cards; active:scale-[0.98] on buttons; smooth pulse for due date urgency indicator"
   },
-  "motion_and_interactions": {
-    "hover_lift": "hover:-translate-y-1 hover:shadow-md transition-transform duration-200 ease-out",
-    "button_press": "active:scale-95 transition-transform duration-100",
-    "dock_item_add": "motion.div scale from 0.8 to 1 with spring bounce (stiffness: 400, damping: 25)",
-    "notification_pop": "slide-in from bottom with gentle overshoot",
-    "reduced_motion": "Wrap custom motion in (prefers-reduced-motion: reduce) conditionals and ensure all items remain accessible without motion"
-  },
-  "copy_tone_and_examples": {
-    "tone": "Upbeat, warm, storybook-friendly, encouraging for kids, reassuring and crystal clear for Indian parents",
-    "headlines": {
-      "hero": "Fuel Little Imaginations with Fresh Books Every Month 📚✨",
-      "subhero": "Curated 4-book monthly bundles delivered to your doorstep in Mumbai & Bangalore. Swap whenever you're ready — no late fees, zero clutter!",
-      "pricing_tag": "Just ₹1,499 for 3 Months (12 magical storybooks!)",
-      "whatsapp_pitch": "Track delivery & swaps easily on WhatsApp — hassle-free for busy parents",
-      "toys_teaser": "Toy Trunk is Coming Soon! 🧸 Wooden Montessori toys, STEM puzzles & games"
-    }
-  },
-  "page_by_page_retheme_specs": {
-    "Home": {
-      "hero_section": "Light cream background (#FDFBF7) with soft sky blue (#F0F9FF) and sunshine yellow (#FEFCE8) ambient blobs. Left side: Friendly Poppins headline, 3 quick benefit pills ('Curated for Ages 2-12', 'Sanitized & Inspected', 'Instant WhatsApp Support'), and the Pincode checker input in a chunky pill container. Right side: Playful book collage with kid photo cards, floating '4 Books/Mo' badge and star accents.",
-      "pincode_checker": "Chunky white pill box with 2px sky-200 border, map pin icon, 6-digit input, and bright sky-600 'Check Delivery' button with instant green/amber feedback chip.",
-      "how_it_works": "4-step playful story track (1. Pick 4 Books -> 2. Doorstep Delivery -> 3. Read & Enjoy -> 4. Free Swap on WhatsApp) featuring friendly step number stickers (1, 2, 3, 4) in colorful circles.",
-      "value_props": "Grid of 3 soft-tinted cards: Mint green ('Sanitized & Child-Safe'), Sky blue ('₹125/Book vs ₹400 MRP'), Sunshine yellow ('Zero Late Fees & Easy Returns').",
-      "social_proof": "Parent testimonials with 5 gold stars, child's age badge (e.g. 'Mom to Kabir, Age 5'), and friendly quote bubbles."
-    },
-    "Catalog": {
-      "header": "Playful banner with search bar & age filters ('All', 'Ages 2-4 (Board Books)', 'Ages 5-7 (Early Readers)', 'Ages 8-10 (Chapter Books)', 'Ages 11-14 (Young Adults)') styled as chunky toggle pills.",
-      "grid": "3-column responsive grid of books with colorful category badges, reading level indicator, book cover image, and chunky '+ Add to Box' button that turns into green '✓ Added' when selected.",
-      "dock": "Sticky floating bottom dock showing 4 slots with miniature thumbnails, counter ('3/4 Books Selected'), and bright 'Confirm Box' CTA."
-    },
-    "Subscription": {
-      "plan_card": "Sunny gold highlight card for ₹1,499 Quarterly Plan (3 Months), broken down to '₹499/month · 12 books total'. Includes bullet points with green checkmarks.",
-      "checkout_steps": "Friendly step-by-step accordion: 1. Delivery Address & Pincode -> 2. WhatsApp Number for Updates -> 3. Payment Option (Mock Razorpay / UPI / Card / Cash on Delivery).",
-      "trust_badges": "100% money-back guarantee seal, sanitized book badge, parent-approved lock."
-    },
-    "Dashboard": {
-      "welcome_banner": "Sunny sky card: 'Welcome back, [Parent Name]! Kabir's Reading Box is Active 📖'",
-      "current_books": "4-card row of active books with days remaining countdown badge ('📅 Return/Swap in 12 days') and one-click 'Request Return & Swap' chunky button.",
-      "whatsapp_log": "Friendly WhatsApp mock chat card with green header, timestamped status updates ('Your 4 books were dispatched!', 'Swap reminder sent to +91 98765 43210').",
-      "reading_stats": "Playful milestone badges ('12 Books Read this Quarter', 'Super Explorer Badge')."
-    },
-    "Auth_Pages": {
-      "Login_Signup": "Two-column split card on soft cream page. Left column: Pastel illustrated reading perks panel with cheerful badges. Right column: White card with rounded-2xl inputs, prominent labels, show/hide password toggle, and chunky sky-600 submit button.",
-      "ForgotPassword_ResetPassword": "Centered friendly card with pastel lock/key icon in a soft circle, clear explanation, and instant feedback alerts."
-    },
-    "Toys_Teaser": {
-      "banner": "Lavender/Mint pastel banner teasing 'RentARead Toys Trunk' with waitlist email signup and chunky 'Join Waitlist' button."
-    }
-  },
-  "accessibility_and_wcag": {
-    "contrast_guarantee": "All text elements meet WCAG AA (>= 4.5:1 ratio). Sky blue buttons use deep saturated #0284C7 or #0369A1 on white text (ratio 4.8:1+). Dark slate #0F172A and #1E293B are used for all headers and body text against #FDFBF7 and white cards (ratio 12:1+).",
-    "focus_states": "All inputs and buttons feature prominent focus ring `focus:ring-4 focus:ring-sky-200 focus:outline-none`.",
-    "testing_attributes": "All buttons, inputs, links, badges, and counters MUST include `data-testid` attributes (e.g., `data-testid=\"pincode-input\"`, `data-testid=\"add-to-bundle-button\"`, `data-testid=\"bundle-dock\"`)."
+  "accessibility": {
+    "contrast_ratio": "WCAG AA compliant (4.5:1 for body and captions against all solid & glass surfaces; 3:1 for large display titles)",
+    "focus_states": "Visible focus rings: focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2",
+    "reduced_motion": "Wrap animations with prefers-reduced-motion queries; Lenis auto-disabled when user prefers reduced motion",
+    "aria": "All form controls, modals, tabs, and bundle dock actions have appropriate aria-label and role attributes",
+    "data_testids": "Every button, input, navigation link, tab, filter, and notification MUST carry a strict kebab-case role-based data-testid"
   },
   "image_urls": [
     {
-      "category": "hero_and_reading_moments",
-      "url": "https://images.unsplash.com/photo-1610500796385-3ffc1ae2f046?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHw0fHxjaGlsZHJlbiUyMHJlYWRpbmclMjBjb2xvcmZ1bCUyMGJvb2tzfGVufDB8fHx8MTc5MDQ2OTM1NXww&ixlib=rb-4.1.0&q=85",
-      "description": "Happy children engaged in reading colorful storybooks together",
-      "placement": "Home hero right illustration card and how-it-works section"
+      "category": "Hero & Editorial Trust",
+      "description": "Parent and child reading together in a light modern library/home setting",
+      "url": "https://images.unsplash.com/photo-1583468982228-19f19164aee2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHw0fHxraWRzJTIwcmVhZGluZyUyMGJvb2tzJTIwbGlicmFyeXxlbnwwfHx8fDE3OTA1ODEzMTh8MA&ixlib=rb-4.1.0&q=85"
     },
     {
-      "category": "toddler_reading",
-      "url": "https://images.unsplash.com/flagged/photo-1551887373-6edba6dacbb1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMHJlYWRpbmclMjBjb2xvcmZ1bCUyMGJvb2tzfGVufDB8fHx8MTc5MDQ2OTM1NXww&ixlib=rb-4.1.0&q=85",
-      "description": "Young child happily exploring picture book pages",
-      "placement": "Early reader age category and parent testimonials"
+      "category": "Curated Reading & Milestone Inspiration",
+      "description": "Young reader sitting on a tall stack of books, modern minimalist composition",
+      "url": "https://images.unsplash.com/photo-1581970196594-f0a8ad70eaa1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxraWRzJTIwcmVhZGluZyUyMGJvb2tzJTIwbGlicmFyeXxlbnwwfHx8fDE3OTA1ODEzMTh8MA&ixlib=rb-4.1.0&q=85"
     },
     {
-      "category": "cozy_storytime",
-      "url": "https://images.unsplash.com/photo-1532789339108-2ebc484efbf1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHwzfHxjaGlsZHJlbiUyMHJlYWRpbmclMjBjb2xvcmZ1bCUyMGJvb2tzfGVufDB8fHx8MTc5MDQ2OTM1NXww&ixlib=rb-4.1.0&q=85",
-      "description": "Children reading together cozy on a couch",
-      "placement": "Subscription benefits and parent trust highlight"
+      "category": "The Toy Trunk Waitlist & Discovery",
+      "description": "Artisanal wooden and learning toys displayed cleanly",
+      "url": "https://images.unsplash.com/photo-1644416598043-11c2816eec28?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxraWRzJTIwcmVhZGluZyUyMGJvb2tzJTIwbGlicmFyeXxlbnwwfHx8fDE3OTA1ODEzMTh8MA&ixlib=rb-4.1.0&q=85"
+    },
+    {
+      "category": "Parent Community & Reading Habits",
+      "description": "Warm reading atmosphere in an organized, beautiful book space",
+      "url": "https://images.unsplash.com/photo-1532294220147-279399e4e00f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwyfHxraWRzJTIwcmVhZGluZyUyMGJvb2tzJTIwbGlicmFyeXxlbnwwfHx8fDE3OTA1ODEzMTh8MA&ixlib=rb-4.1.0&q=85"
     }
   ],
   "instructions_to_main_agent": [
-    "1. Replace font imports in `frontend/src/index.css` with `@import \"@fontsource/poppins/400.css\"; @import \"@fontsource/poppins/600.css\"; @import \"@fontsource/poppins/700.css\"; @import \"@fontsource-variable/dm-sans\";` and update `--font-heading`, `--font-display`, `--font-sans` variables.",
-    "2. Update the `:root` theme variables in `frontend/src/index.css` with the pastel storybook palette tokens (background: #FDFBF7, primary: #0284C7, secondary: #F0F9FF, accent: #16A34A, ring: #0284C7, radius: 1rem).",
-    "3. Replace the editorial terracotta/serif elements across Home, Catalog, Subscription, Dashboard, Auth, and ToysTeaser with rounded-3xl cards, chunky pill buttons, pastel category pills, and Lucide icons.",
-    "4. Ensure the light theme remains bright and cheerful without dark photo overlays, keeping full parent-trustworthy readability.",
-    "5. Keep all backend endpoints, Pydantic models, data stores, and React router URLs identical so existing tests continue passing seamlessly.",
-    "6. Verify every interactive component has explicit `data-testid` attributes."
+    "Retheme index.css font imports to @import '@fontsource-variable/plus-jakarta-sans'; @import '@fontsource-variable/instrument-sans'; @import '@fontsource-variable/geist-mono';",
+    "Set --font-heading: 'Plus Jakarta Sans Variable', sans-serif; and --font-sans: 'Instrument Sans Variable', sans-serif; in frontend/src/index.css.",
+    "Replace warm cream/terracotta/poppins colors with the modern crisp SaaS palette (#F8FAFC page, #FFFFFF cards, #2563EB accent, #0F172A text).",
+    "Use backdrop-filter blur-md with semi-transparent white fills (rgba(255,255,255,0.8)) and 1px crisp borders (border-slate-200/80) for cards.",
+    "Keep ALL existing routes, functionality, Pincode availability logic, 4-book bundle dock behavior, WhatsApp logs, milestone badges, and test credentials intact.",
+    "Ensure every interactive element keeps or implements data-testid attributes for testing subagent verification."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Never use generic centered layouts with zero hierarchy. Use asymmetry and generous spacing (p-6, p-8, gap-8).",
+    "Never apply universal 'transition: all' in CSS. Specify transition-colors, transition-transform, transition-shadow.",
+    "Ensure high contrast on hover states. Whenever a button or card background changes on hover, declare explicit text color.",
+    "All toasts must use Sonner via Toaster in frontend/src/components/ui/sonner.tsx."
   ]
 }

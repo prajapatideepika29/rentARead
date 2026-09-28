@@ -30,7 +30,7 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
       whileHover={{ y: -6, rotate: -1 }}
       className="group flex flex-col"
     >
-      <div className="relative overflow-hidden rounded-2xl border-2 border-[#F1E8DC] bg-[#F0F9FF] shadow-sm transition-all duration-300 group-hover:border-[#BAE6FD] group-hover:shadow-xl">
+      <div className="relative overflow-hidden rounded-2xl border-2 border-[#E2E8F0] bg-[#EFF6FF] shadow-sm transition-all duration-300 group-hover:border-[#BFDBFE] group-hover:shadow-xl">
         <div className="aspect-[2/3] w-full overflow-hidden">
           {imgOk ? (
             <img
@@ -46,11 +46,11 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-[#16A34A] p-4 text-center">
-              <span className="font-display text-lg italic text-[#FDFBF7]">{book.title}</span>
+              <span className="font-display text-lg italic text-[#F8FAFC]">{book.title}</span>
             </div>
           )}
         </div>
-        <span className="absolute left-3 top-3 rounded-full bg-[#FDFBF7]/90 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-[#0284C7] backdrop-blur">
+        <span className="absolute left-3 top-3 rounded-md bg-[#0F172A]/80 px-2 py-0.5 text-[11px] font-semibold text-white backdrop-blur-sm">
           {book.genre}
         </span>
         {out && (
@@ -59,7 +59,7 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
           </span>
         )}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-[#0F172A]/90 to-transparent p-3 pt-10 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-          <p className="line-clamp-3 text-xs leading-relaxed text-[#FDFBF7]/90">{book.synopsis}</p>
+          <p className="line-clamp-3 text-xs leading-relaxed text-[#F8FAFC]/90">{book.synopsis}</p>
         </div>
       </div>
 
@@ -67,7 +67,7 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
         <h3 className="font-heading text-base font-semibold leading-snug text-[#0F172A]">{book.title}</h3>
         <p className="mt-0.5 text-sm text-[#64748B]">{book.author}</p>
         <div className="mt-1.5 flex items-center gap-2">
-          <span className="rounded-full border border-[#BAE6FD] bg-[#E0F2FE] px-2.5 py-0.5 text-[11px] font-bold text-[#0369A1]">
+          <span className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-[11px] font-semibold text-slate-600">
             {book.age_group === "grown-ups" ? "Grown-ups" : `Ages ${book.age_group}`}
           </span>
           <span className="text-xs text-[#94A3B8]">{book.pages} pages</span>
@@ -78,10 +78,10 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
           disabled={out && !selected}
           className={`mt-3 flex items-center justify-center gap-1.5 rounded-full py-2 text-sm font-semibold transition-colors ${
             selected
-              ? "bg-[#16A34A] text-[#FDFBF7]"
+              ? "bg-[#16A34A] text-[#F8FAFC]"
               : out
-                ? "cursor-not-allowed bg-[#F0F9FF] text-[#94A3B8]"
-                : "bg-[#0F172A] text-[#FDFBF7] hover:bg-[#0284C7]"
+                ? "cursor-not-allowed bg-[#EFF6FF] text-[#94A3B8]"
+                : "bg-[#0F172A] text-[#F8FAFC] hover:bg-[#2563EB]"
           }`}
         >
           {selected ? (
